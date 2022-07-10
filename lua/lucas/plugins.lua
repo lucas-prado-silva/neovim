@@ -59,7 +59,10 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp
   -- use "christianchiarulli/hop.nvim"
-  -- use "phaazon/hop.nvim"
+  use {
+        "phaazon/hop.nvim", 
+        branch = 'v2', -- optional but strongly recommended
+    }
   -- use "kylechui/nvim-surround"
   -- use {
   --  "abecodes/tabout.nvim",
@@ -127,6 +130,10 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "simrat39/symbols-outline.nvim"
+  use "ray-x/lsp_signature.nvim"
+  use "b0o/SchemaStore.nvim"
+  use "folke/trouble.nvim"
   -- use "github/copilot.vim"
   -- use {
   --  "zbirenbaum/copilot.lua",
@@ -159,6 +166,7 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use 'f-person/git-blame.nvim'
 
   -- DAP
   use "mfussenegger/nvim-dap"
