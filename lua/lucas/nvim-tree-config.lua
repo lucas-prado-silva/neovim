@@ -16,9 +16,6 @@ nvim_tree.setup {
   hijack_directories = {
     enable = false,
   },
-  -- update_to_buf_dir = {
-  --   enable = false,
-  -- },
   -- disable_netrw = true,
   -- hijack_netrw = true,
   -- open_on_setup = false,
@@ -43,7 +40,7 @@ nvim_tree.setup {
   renderer = {
     add_trailing = false,
     group_empty = false,
-    highlight_git = false,
+    highlight_git = true,
     highlight_opened_files = "none",
     root_folder_modifier = ":t",
     indent_markers = {
@@ -121,7 +118,7 @@ nvim_tree.setup {
     width = 30,
     height = 30,
     hide_root_folder = false,
-    side = "left",
+    side = "right",
     -- auto_resize = true,
     mappings = {
       custom_only = false,
