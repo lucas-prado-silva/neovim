@@ -13,6 +13,8 @@ local icons = require "lucas.icons"
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+  reload_on_bufenter = true,
+  auto_reload_on_write = true,
   hijack_directories = {
     enable = false,
   },
@@ -24,7 +26,6 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
-  auto_close = true,
   -- open_on_tab = false,
   -- hijack_cursor = false,
   update_cwd = true,
