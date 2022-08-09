@@ -101,10 +101,10 @@ return packer.startup(function(use)
   -- use "andymass/vim-matchup"
 
   -- Colorschemes
-  use "folke/tokyonight.nvim"
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
-  -- use "lunarvim/onedarker.nvim"
+  use ({ 'projekt0n/github-nvim-theme' })
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  -- use "lunarvim/darkplus.nvim"
+  -- -- use "lunarvim/onedarker.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
