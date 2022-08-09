@@ -46,21 +46,20 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim"
-  use "kyazdani42/nvim-web-devicons"
-  use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' } }
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "christianchiarulli/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
+  use "numToStr/Comment.nvim" -- allows comment shortcuts
+  use "kyazdani42/nvim-web-devicons" -- cool icons TODO: could be better
+  use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' } } --load the file tree using the web devicons
+  use "akinsho/bufferline.nvim" -- top bar with buffers
+  use "moll/vim-bbye" -- closes buffers more intelligently
+  use "christianchiarulli/lualine.nvim" --status bar at the bottom
+  use "akinsho/toggleterm.nvim" --allows toglling a terminal inside neovim
+  use "ahmedkhalf/project.nvim" -- utils to navigate to projects, is used inside telescope
+  use "lewis6991/impatient.nvim" -- makes neovim start faster
+  use "lukas-reineke/indent-blankline.nvim" -- ident line
+  use "goolord/alpha-nvim" -- initial dashboard
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp
-  -- use "christianchiarulli/hop.nvim"
   use {
-        "phaazon/hop.nvim", 
+        "phaazon/hop.nvim",
         branch = 'v2', -- optional but strongly recommended
     }
   -- use "kylechui/nvim-surround"
@@ -68,13 +67,12 @@ return packer.startup(function(use)
   --  "abecodes/tabout.nvim",
   --  wants = { "nvim-treesitter" }, -- or require if not used so far
   --}
-  --use "nacro90/numb.nvim"
+  use "nacro90/numb.nvim" --peeks the code when doing something like :35
   --use "monaqa/dial.nvim"
-  --use "norcalli/nvim-colorizer.lua"
-  --use "windwp/nvim-spectre"
+  use "norcalli/nvim-colorizer.lua"
+  use "windwp/nvim-spectre" --TODO configure this -- find and replace plugin
   --use "kevinhwang91/nvim-bqf"
   --use "ThePrimeagen/harpoon"
-  --use "MattesGroeger/vim-bookmarks"
   -- use "Mephistophiles/surround.nvim"
   --use { "michaelb/sniprun", run = "bash ./install.sh" }
   --use {
@@ -87,24 +85,13 @@ return packer.startup(function(use)
   -- UI
   -- use "stevearc/dressing.nvim"
   -- use "ghillb/cybu.nvim"
-  -- use { "christianchiarulli/nvim-gps", branch = "text_hl" }
   -- use "tversteeg/registers.nvim"
-  -- use "rcarriga/nvim-notify"
-  -- use "kyazdani42/nvim-web-devicons"
-  -- use "kyazdani42/nvim-tree.lua"
-  -- use "tamago324/lir.nvim"
-  -- use "goolord/alpha-nvim"
+  use "rcarriga/nvim-notify"
   use "folke/which-key.nvim"
-  -- use "folke/zen-mode.nvim"
-  -- use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
-  -- use "andymass/vim-matchup"
 
   -- Colorschemes
   use ({ 'projekt0n/github-nvim-theme' })
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  -- use "lunarvim/darkplus.nvim"
-  -- -- use "lunarvim/onedarker.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -115,14 +102,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   -- use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  -- use "zbirenbaum/copilot-cmp"
-  --use {
-  --  "tzachar/cmp-tabnine",
-  --  run = "./install.sh",
-  --  requires = "hrsh7th/nvim-cmp",
-  --}
-
   -- snippets
+
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
@@ -131,7 +112,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "simrat39/symbols-outline.nvim"
-  use "ray-x/lsp_signature.nvim"
+  use "ray-x/lsp_signature.nvim" -- show function signature
   use "b0o/SchemaStore.nvim"
   use "folke/trouble.nvim"
   -- use "github/copilot.vim"
@@ -174,27 +155,6 @@ return packer.startup(function(use)
   -- use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
-
-  -- Plugin Graveyard
-  -- use "romgrk/nvim-treesitter-context"
-  -- use "mizlan/iswap.nvim"
-  -- use {'christianchiarulli/nvim-ts-rainbow'}
-  -- use "nvim-telescope/telescope-ui-select.nvim"
-  -- use "nvim-telescope/telescope-file-browser.nvim"
-  -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
-  -- use { "christianchiarulli/JABS.nvim" }
-  -- use "lunarvim/vim-solidity"
-  -- use "tpope/vim-repeat"
-  -- use "Shatur/neovim-session-manager"
-  -- use "metakirby5/codi.vim"
-  -- use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
-  -- use "rcarriga/cmp-dap"
-  -- use "filipdutescu/renamer.nvim"
-  -- use "https://github.com/rhysd/conflict-marker.vim"
-  -- use "rebelot/kanagawa.nvim"
-  -- use "unblevable/quick-scope"
-  -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  -- use "gbprod/cutlass.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

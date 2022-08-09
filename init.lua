@@ -17,4 +17,6 @@ require("lucas.gitsigns-config")
 require("lucas.git-blame-config")
 require("lucas.hop-config")
 require("lucas.toggleterm-config")
+require("lucas.numb-config")
+require("lucas.colorizer-config")
 
