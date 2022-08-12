@@ -109,12 +109,29 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
+
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+
+  use {
+    "glepnir/lspsaga.nvim",
+    event = "BufRead",
+    config = function()
+      require("lucas.lsp-config.lsp-saga-config").config()
+    end,
+  }
+
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use 'mfussenegger/nvim-lint'
+  use 'mhartington/formatter.nvim'
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim" -- show function signature
   use "b0o/SchemaStore.nvim"
-  use "folke/trouble.nvim"
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
   -- use "github/copilot.vim"
   -- use {
   --  "zbirenbaum/copilot.lua",

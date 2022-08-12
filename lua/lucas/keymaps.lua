@@ -54,7 +54,13 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
-keymap("n", "<leader>zz", ":Alpha<CR>", opts)
+-- Alpha
+keymap("n", "<leader>a", ":Alpha<CR>", opts)
+
+-- trouble diagnostics
+vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
 
 -- Insert --
 -- Press jk fast to enter

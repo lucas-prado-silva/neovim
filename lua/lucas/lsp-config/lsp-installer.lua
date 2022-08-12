@@ -58,6 +58,11 @@ for _, server in pairs(servers) do
   --   opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
   -- end
 
+  if server == "tsserver" then
+    local tsserver_opts = require "lucas.lsp-config.settings.tsserver"
+    opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
+  end
+
   if server == "yamlls" then
     local yamlls_opts = require "lucas.lsp-config.settings.yamlls"
     opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
