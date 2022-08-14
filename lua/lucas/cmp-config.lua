@@ -8,19 +8,9 @@ if not snip_status_ok then
   return
 end
 
--- local tabnine_status_ok, _ = pcall(require, "user.tabnine")
--- if not tabnine_status_ok then
---   return
--- end
-
 local compare = require "cmp.config.compare"
 
 require("luasnip/loaders/from_vscode").lazy_load()
-
--- local check_backspace = function()
---   local col = vim.fn.col "." - 1
---   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
--- end
 
 local check_backspace = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -57,7 +47,6 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<Right>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -128,15 +117,15 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "crates", group_index = 1 },
-    { name = "nvim_lsp", group_index = 2 },
+    { name = "nvim_lsp", group_index = 1 },
     { name = "nvim_lua", group_index = 2 },
-    { name = "copilot", group_index = 2 },
+    { name = "path", group_index = 2 },
     { name = "luasnip", group_index = 2 },
     { name = "buffer", group_index = 2 },
-    { name = "cmp_tabnine", group_index = 2 },
-    { name = "path", group_index = 2 },
-    { name = "emoji", group_index = 2 },
+    { name = "crates", group_index = 3 },
+    -- { name = "copilot", group_index = 4 },
+    -- { name = "cmp_tabnine", group_index = 4 },
+    -- { name = "emoji", group_index = 2 },
   },
   sorting = {
     priority_weight = 2,

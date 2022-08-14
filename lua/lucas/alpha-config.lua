@@ -7,12 +7,13 @@ local icons = require "lucas.icons"
 
 local dashboard = require "alpha.themes.dashboard"
 dashboard.section.header.val = {
-  [[                               __                ]],
-  [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-  [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-  [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-  [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-  [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+  [[ _                               _   _   _                      _            ]],
+  [[| |                             ( ) | \ | |                    (_)           ]],
+  [[| |     _   _   ___   __ _  ___ |/  |  \| |  ___   ___  __   __ _  _ __ ___  ]],
+  [[| |    | | | | / __| / _` |/ __|    | . ` | / _ \ / _ \ \ \ / /| || '_ ` _ \ ]],
+  [[| |____| |_| || (__ | (_| |\__ \    | |\  ||  __/| (_) | \ V / | || | | | | |]],
+  [[\_____/ \__,_| \___| \__,_||___/    \_| \_/ \___| \___/   \_/  |_||_| |_| |_|]],
+  [[                                                                             ]],
 }
 dashboard.section.buttons.val = {
   dashboard.button("f", icons.documents.Files .. " Find file", ":Telescope find_files <CR>"),
@@ -37,7 +38,7 @@ local function footer()
   -- handle:close()
   -- return fortune
     -- put my website here
-  return "google.com"
+  return "(╯°□°）╯ ︵ ┻━┻"
 end
 
 dashboard.section.footer.val = footer()
