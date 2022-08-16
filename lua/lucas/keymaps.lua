@@ -53,14 +53,23 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fgf", ":Telescope git_files<CR>", opts)
+keymap("n", "<leader>fgc", ":Telescope git_commits<CR>", opts)
+keymap("n", "<leader>fgb", ":Telescope git_branches<CR>", opts)
+keymap("n", "<leader>fgs", ":Telescope git_status<CR>", opts)
+keymap("n", "<leader>fgh", ":Telescope git_stash<CR>", opts)
 
 -- Alpha
 keymap("n", "<leader>a", ":Alpha<CR>", opts)
 
 -- trouble diagnostics
 vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",
-  {silent = true, noremap = true}
+    { silent = true, noremap = true }
 )
+
+-- Testing
+keymap("n", "<leader>tt", ":neotest.run.run()<CR>", opts)
+keymap("n", "<leader>tf", ":neotest.run.run(vim.fn.expand('%'))<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -84,14 +93,3 @@ keymap("v", ">", ">gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
-
-
-
-
-
-
-
-
-
-

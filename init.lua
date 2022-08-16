@@ -21,4 +21,7 @@ require("lucas.toggleterm-config")
 require("lucas.numb-config")
 require("lucas.colorizer-config")
 require("lucas.which-key-config")
+require("lucas.neotest-config")
+-- snappy scroll feels snappier
+-- require("lucas.neoscroll-config")
 
