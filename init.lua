@@ -25,3 +25,6 @@ require("lucas.neotest-config")
 -- snappy scroll feels snappier
 -- require("lucas.neoscroll-config")
 
+-- transparency
+vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
+vim.cmd('hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE')

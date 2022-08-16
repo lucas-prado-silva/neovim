@@ -71,7 +71,8 @@ return packer.startup(function(use)
     --------------
     --- THEMES ---
     --------------
-    use({ 'projekt0n/github-nvim-theme' })
+    -- use({ 'projekt0n/github-nvim-theme' })
+    use { "ellisonleao/gruvbox.nvim" }
 
     --------
     -- UI --
