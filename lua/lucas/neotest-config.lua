@@ -49,12 +49,12 @@ local mappings = {
     end,
     ["<leader>np"] = neotest.summary.toggle,
     ["<leader>nm"] = neotest.summary.run_marked,
-    ["[n"] = function()
-      neotest.jump.prev({ status = "failed" })
-    end,
-    ["]n"] = function()
-      neotest.jump.next({ status = "failed" })
-    end,
+    -- ["[n"] = function()
+    --   neotest.jump.prev({ status = "failed" })
+    -- end,
+    -- ["]n"] = function()
+    --   neotest.jump.next({ status = "failed" })
+    -- end,
   }
 
   for keys, mapping in pairs(mappings) do
