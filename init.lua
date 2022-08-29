@@ -21,8 +21,8 @@ require("lucas.toggleterm-config")
 require("lucas.numb-config")
 require("lucas.colorizer-config")
 require("lucas.which-key-config")
-require("lucas.neotest-config")
 require("lucas.leap-config")
+require("lucas.spectre-config")
 
 -- transparency
 vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')

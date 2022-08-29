@@ -60,6 +60,7 @@ return packer.startup(function(use)
     use { "goolord/alpha-nvim", commit = "f457f7fadd5fdb6491422d4b8677c368bb2259d9" } -- initial dashboard
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- allows other plugins to use dot repeat, currenly used by lightspeed
     -- use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- TODO configure to work
+    use { "windwp/nvim-spectre", commit = "c553eb47ad9d82f8452119ceb6eb209c930640ec" }
 
     -------------
     --- ICONS ---
@@ -76,106 +77,132 @@ return packer.startup(function(use)
     --------
     -- UI --
     --------
-    use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' } } --load the file tree using the web devicons
-    use "nvim-lua/popup.nvim" -- An implementation of the Popup API
-    use "akinsho/bufferline.nvim" -- top bar with buffers
-    use "christianchiarulli/lualine.nvim" --status bar at the bottom
-    use "norcalli/nvim-colorizer.lua"
-    use "rcarriga/nvim-notify"
+    use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' },
+        commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
+    use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
+    use { "akinsho/bufferline.nvim", commit = "fb7b17362eb6eedc57c37bdfd364f8e7d8149e31" } -- top bar with buffers
+    use { "christianchiarulli/lualine.nvim", commit = "c0510ddec86070dbcacbd291736de27aabbf3bfe" } --status bar at the bottom
+    use "norcalli/nvim-colorizer.lua" -- might be chill not to pin
+    use { "rcarriga/nvim-notify", commit = "cf5dc4f7095673b8402c51bf80448596d7b97fc6" }
     -- hop is deprecated in favor of leap
     -- use {
     --     "phaazon/hop.nvim",
     --     branch = 'v2', -- optional but strongly recommended
     -- }
     use { "ggandor/leap.nvim", commit = "5cd1edbe9ecd05c9765b656d4a8016065135873f" }
-    use "RRethy/vim-illuminate"
+    use { "RRethy/vim-illuminate", commit = "9179f9cb3d7a97c5724d215c671b6eb578e63520" }
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig",
+        commit = "94bf6fcb1dc27bdad230d9385da085e72c390019"
+    }
 
     ----------------
     --- COMMENTS ---
     ----------------
-    use "folke/todo-comments.nvim"
-    use "numToStr/Comment.nvim" -- allows comment shortcuts
+    use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim",
+        commit = "98b1ebf198836bdc226c0562b9f906584e6c400e", config = function()
+            require("todo-comments").setup()
+        end
+    }
+    use { "numToStr/Comment.nvim", commit = "80e7746e42fa685077a7941e9022308c7ad6adf8" } -- allows comment shortcuts
 
     ----------------
     --- TERMINAL ---
     ----------------
-    use "akinsho/toggleterm.nvim" --allows toglling a terminal inside neovim
+    use { "akinsho/toggleterm.nvim", commit = "f494c61024ffa25ee407d55b04d8b28ba9e839cb" } --allows toglling a terminal inside neovim
 
     -----------------
     --- TELESCOPE ---
     -----------------
-    use "nvim-telescope/telescope.nvim"
-    use { 'nvim-telescope/telescope-ui-select.nvim' }
+    use { "nvim-telescope/telescope.nvim", commit = "b923665e64380e97294af09117e50266c20c71c7" }
+    use { 'nvim-telescope/telescope-ui-select.nvim', commit = "62ea5e58c7bbe191297b983a9e7e89420f581369" }
+    use { "nvim-telescope/telescope-file-browser.nvim", commit = "00a814a891de086ed446151bacc559c63682b6ee" }
+    use {
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            { 'kkharji/sqlite.lua', module = 'sqlite' },
+            -- you'll need at least one of these
+            { 'nvim-telescope/telescope.nvim' },
+            -- {'ibhagwan/fzf-lua'},
+        },
+        config = function()
+            require('neoclip').setup()
+        end,
+    }
+    use "xiyaowong/telescope-emoji.nvim"
 
     ---------
     -- LSP --
     ---------
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use "neovim/nvim-lspconfig" -- enable lsp
-    use "ray-x/lsp_signature.nvim" -- show function signature
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "f3c53d225ada93a99bfd818e1c40012400e2dc55" }
+    use { "williamboman/mason.nvim", commit = "924923882bcc027268fdfb77e72df60b058d5e69" }
+    use { "williamboman/mason-lspconfig.nvim", commit = "74c45b3663aeb4c9065a4b29355d9c1c8a8c00b5" }
+    use { "neovim/nvim-lspconfig", commit = "636ce36c30725391486377850bf8460dc0723ae2" } -- enable lsp
+    use { "ray-x/lsp_signature.nvim", commit = "e65a63858771db3f086c8d904ff5f80705fd962b" } -- show function signature
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
+        commit = "da61737d860ddc12f78e638152834487eabf0ee5"
     }
-    use "jose-elias-alvarez/typescript.nvim"
-    use 'glepnir/lspsaga.nvim'
+    use { "jose-elias-alvarez/typescript.nvim", commit = "4f362c92c1f2f41c9bb13e72106b8719ae3ff379" }
+    use { 'glepnir/lspsaga.nvim', commit = "777f3c8b7eea9eb57ef4f5f73452e3069360eb5d" }
 
     ---------
     -- CMP --
     ---------
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-nvim-lua"
+    use { "hrsh7th/nvim-cmp", commit = "058100d81316239f3874064064f0f0c5d43c2103" }
+    use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions
+    use { "hrsh7th/cmp-path", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" } -- path completions
+    use { "hrsh7th/cmp-cmdline", commit = "9c0e331fe78cab7ede1c051c065ee2fc3cf9432e" } -- cmdline completions
+    use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
+    use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
+    use { "hrsh7th/cmp-nvim-lua" }
 
     ------------------------------
     --- LINTERS and FORMATTERS ---
     ------------------------------
-    use 'mfussenegger/nvim-lint'
-    use 'mhartington/formatter.nvim'
-    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use { 'mfussenegger/nvim-lint', commit = "b551a7218c802a5b361dd46857af4945fe779dcd" }
+    use { 'mhartington/formatter.nvim', commit = "07a746e6df6bf4c77766aa6c19723da618a38781" }
+    use { "jose-elias-alvarez/null-ls.nvim", commit = "753ad51790a966b42997ac935e26573fb6d5864a" } -- for formatters and linters
+    -- use 'numToStr/prettierrc.nvim'
 
     ----------------
     --- SNIPPETS ---
     ----------------
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-    use "b0o/SchemaStore.nvim"
+    use { "L3MON4D3/LuaSnip", commit = "b5cfdd0db5889bcd7c9bd6bdfb3fe83cb0a83bd1" } --snippet engine
+    -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    -- use "b0o/SchemaStore.nvim"
 
     ---------
     -- GIT --
     ---------
-    use "lewis6991/gitsigns.nvim"
-    use 'f-person/git-blame.nvim'
-    use 'tpope/vim-fugitive'
+    use { "lewis6991/gitsigns.nvim", commit = "1e107c91c0c5e3ae72c37df8ffdd50f87fb3ebfa" }
+    use { 'f-person/git-blame.nvim', commit = "1087c3c78ea9f7b7825a256e8fe1ec3af1ad88d0" }
+    use { 'tpope/vim-fugitive', commit = "b411b753f805b969cca856e2ae51fdbab49880df" }
 
     ---------
     -- DAP --
     ---------
-    use "mfussenegger/nvim-dap"
-    use "rcarriga/nvim-dap-ui"
-    use "Pocco81/DAPInstall.nvim"
+    -- use "mfussenegger/nvim-dap"
+    -- use "rcarriga/nvim-dap-ui"
+    -- use "Pocco81/DAPInstall.nvim"
 
     -----------------
     ----- TESTS -----
     -----------------
     -- TODO: neotest ain't working
-    use {
-        "nvim-neotest/neotest",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "antoinemadec/FixCursorHold.nvim",
-            "haydenmeade/neotest-jest",
-            "nvim-neotest/neotest-vim-test",
-            "vim-test/vim-test"
-        }
-    }
+    -- use {
+    --     "nvim-neotest/neotest",
+    --     requires = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-treesitter/nvim-treesitter",
+    --         "antoinemadec/FixCursorHold.nvim",
+    --         "haydenmeade/neotest-jest",
+    --         "nvim-neotest/neotest-vim-test",
+    --         "vim-test/vim-test"
+    --     }
+    -- }
 
     -----------------
     --- GRAVEYARD ---

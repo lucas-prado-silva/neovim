@@ -61,9 +61,18 @@ keymap("n", "<leader>fgc", ":Telescope git_commits<CR>", opts)
 keymap("n", "<leader>fgb", ":Telescope git_branches<CR>", opts)
 keymap("n", "<leader>fgs", ":Telescope git_status<CR>", opts)
 keymap("n", "<leader>fgh", ":Telescope git_stash<CR>", opts)
+keymap("n", "<leader>fe", ":Telescope file_browser<CR>", opts)
+keymap("n", "<leader>fm", ":Telescope emoji<CR>", opts)
+keymap("n", "<leader>fy", ":Telescope neoclip<CR>", opts)
 
 -- Alpha
 keymap("n", "<leader>a", ":Alpha<CR>", opts)
+
+-- Spectre
+keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
+keymap("n", "<leader>sw", "<cmd>lua require('spectre').open()<CR>", opts)
+keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
+keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
 
 -- trouble diagnostics
 vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",

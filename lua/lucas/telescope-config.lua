@@ -149,5 +149,15 @@ telescope.setup {
             filetypes = { "png", "webp", "jpg", "jpeg", "pdf" },
             find_cmd = "rg", -- find command (defaults to `fd`)
         },
+        neoclip = {},
+        file_browser = {
+            -- disables netrw and use telescope-file-browser in its place
+            hijack_netrw = true,
+        }
     },
 }
+
+telescope.load_extension "file_browser"
+telescope.load_extension "emoji"
+telescope.load_extension "neoclip"
+

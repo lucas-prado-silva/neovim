@@ -2,6 +2,9 @@ local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
 end
+if not cmp then
+  return
+end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
@@ -21,7 +24,7 @@ local icons = require "lucas.icons"
 
 local kind_icons = icons.kind
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
@@ -107,10 +110,10 @@ cmp.setup {
       -- NOTE: order matters
       vim_item.menu = ({
         nvim_lsp = "",
-        nvim_lua = "",
         luasnip = "",
         buffer = "",
         path = "",
+        nvim_lua = "",
         emoji = "",
       })[entry.source.name]
       return vim_item
@@ -118,10 +121,10 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp", group_index = 1 },
-    { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
     { name = "luasnip", group_index = 2 },
     { name = "buffer", group_index = 2 },
+    { name = "nvim_lua", group_index = 2 },
     -- { name = "crates", group_index = 3 },
     -- { name = "copilot", group_index = 4 },
     -- { name = "cmp_tabnine", group_index = 4 },

@@ -5,6 +5,9 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 
+--navic
+local navic = require("nvim-navic")
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -24,6 +27,13 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('v', '<space>ca', '<cmd><C-U>Lspsaga range_code_action<CR>', opts)
     buf_set_keymap('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', opts)
     buf_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+    buf_set_keymap('n', '<C-k>', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+    -- Show line diagnostics
+    buf_set_keymap("n", "<leader>ll", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+    -- Show cursor diagnostic
+    buf_set_keymap("n", "<leader>ld", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+    -- Outline
+    buf_set_keymap("n", "<leader>lo", "<cmd>LSoutlineToggle<CR>", { silent = true })
     buf_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
     buf_set_keymap('n', 'gf', '<Cmd>Lspsaga lsp_finder<CR>', opts)
     buf_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
@@ -39,6 +49,7 @@ local on_attach = function(client, bufnr)
     --         callback = function() vim.lsp.buf.formatting_seq_sync() end
     --     })
     -- end
+    navic.attach(client, bufnr)
 end
 
 protocol.CompletionItemKind = {
@@ -135,3 +146,4 @@ vim.diagnostic.config({
         source = "always", -- Or "if_many"
     },
 })
+
