@@ -68,11 +68,15 @@ keymap("n", "<leader>fy", ":Telescope neoclip<CR>", opts)
 -- Alpha
 keymap("n", "<leader>a", ":Alpha<CR>", opts)
 
+-- Cybu
+keymap("n", "<tab>", ":CybuLastusedPrev<CR>", opts)
+keymap("n", "<s-tab>", ":CybuLastusedNext<CR>", opts)
+
 -- Spectre
 keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
-keymap("n", "<leader>sw", "<cmd>lua require('spectre').open()<CR>", opts)
-keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
-keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
+keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
+keymap("n", "<leader>sv", "<cmd>lua require('spectre').open_visual()<CR>", opts)
+keymap("n", "<leader>sf", "<cmd>lua require('spectre').open_file_search()<CR>", opts)
 
 -- trouble diagnostics
 vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",

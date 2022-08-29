@@ -60,8 +60,18 @@ return packer.startup(function(use)
     use { "goolord/alpha-nvim", commit = "f457f7fadd5fdb6491422d4b8677c368bb2259d9" } -- initial dashboard
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- allows other plugins to use dot repeat, currenly used by lightspeed
     -- use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- TODO configure to work
+    -- TODO spectre is not working too well
     use { "windwp/nvim-spectre", commit = "c553eb47ad9d82f8452119ceb6eb209c930640ec" }
-
+    -- Lua
+    use({
+        "gbprod/cutlass.nvim",
+        config = function()
+            require("cutlass").setup({
+                -- this makes cutlass not override the leap plugin s map
+                exclude = { "ns", "nS" },
+            })
+        end
+    })
     -------------
     --- ICONS ---
     -------------
@@ -96,6 +106,15 @@ return packer.startup(function(use)
         requires = "neovim/nvim-lspconfig",
         commit = "94bf6fcb1dc27bdad230d9385da085e72c390019"
     }
+    use { "j-hui/fidget.nvim", commit = "492492e7d50452a9ace8346d31f6d6da40439f0e", config = function()
+        require "fidget".setup {}
+    end
+    }
+    use({
+        "ghillb/cybu.nvim",
+        commit = "df562d9f4692b58d00348aa5b91981e2347c974d",
+        requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" }, -- optional for icon support
+    })
 
     ----------------
     --- COMMENTS ---
