@@ -1,3 +1,4 @@
+require("impatient")
 require("lucas.options")
 require("lucas.keymaps")
 require("lucas.plugins")
@@ -16,14 +17,12 @@ require("lucas.alpha-config")
 require("lucas.autopairs-config")
 require("lucas.gitsigns-config")
 require("lucas.git-blame-config")
-require("lucas.hop-config")
 require("lucas.toggleterm-config")
 require("lucas.numb-config")
 require("lucas.colorizer-config")
 require("lucas.which-key-config")
 require("lucas.neotest-config")
--- snappy scroll feels snappier
--- require("lucas.neoscroll-config")
+require("lucas.leap-config")
 
 -- transparency
 vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')

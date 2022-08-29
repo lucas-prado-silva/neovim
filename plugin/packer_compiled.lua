@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -154,16 +159,6 @@ _G.packer_plugins = {
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
-  ["hop.nvim"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/hop.nvim",
-    url = "https://github.com/phaazon/hop.nvim"
-  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -173,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
@@ -198,11 +198,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["neoscroll.nvim"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
-    url = "https://github.com/karb94/neoscroll.nvim"
   },
   neotest = {
     loaded = true,
@@ -279,16 +274,6 @@ _G.packer_plugins = {
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-ts-autotag"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
-    url = "https://github.com/windwp/nvim-ts-autotag"
-  },
-  ["nvim-ufo"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/nvim-ufo",
-    url = "https://github.com/kevinhwang91/nvim-ufo"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -313,16 +298,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["promise-async"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/promise-async",
-    url = "https://github.com/kevinhwang91/promise-async"
-  },
-  ["symbols-outline.nvim"] = {
-    loaded = true,
-    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
-    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-ui-select.nvim"] = {
     loaded = true,
@@ -368,6 +343,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-test"] = {
     loaded = true,
