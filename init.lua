@@ -24,6 +24,7 @@ require("lucas.which-key-config")
 require("lucas.leap-config")
 require("lucas.spectre-config")
 require("lucas.cybu-config")
+require("lucas.tabnine-config")
 
 -- transparency
 vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')

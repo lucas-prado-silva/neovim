@@ -72,6 +72,10 @@ return packer.startup(function(use)
             })
         end
     })
+    use { 'rhysd/conflict-marker.vim', commit = "22b6133116795ea8fb6705ddca981aa8faecedda" }
+    use { 'JoosepAlviste/nvim-ts-context-commentstring', commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
+    use { 'andymass/vim-matchup', commit = "5aa3e58db430bf158f7bd0f64387a1f66c43fa7c" }
+
     -------------
     --- ICONS ---
     -------------
@@ -177,6 +181,7 @@ return packer.startup(function(use)
     use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
     use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
     use { "hrsh7th/cmp-nvim-lua" }
+    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', commit = "14e287b5b1434cef322de9cc1ec6fda13b913f45" }
 
     ------------------------------
     --- LINTERS and FORMATTERS ---
