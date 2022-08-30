@@ -65,6 +65,10 @@ keymap("n", "<leader>fe", ":Telescope file_browser<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope emoji<CR>", opts)
 keymap("n", "<leader>fy", ":Telescope neoclip<CR>", opts)
 
+-- Diff view
+keymap("n", "<leader>gdo", ":DiffviewOpen<CR>", opts)
+keymap("n", "<leader>gdc", ":DiffviewClose<CR>", opts)
+
 -- Alpha
 keymap("n", "<leader>a", ":Alpha<CR>", opts)
 

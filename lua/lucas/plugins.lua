@@ -181,7 +181,8 @@ return packer.startup(function(use)
     use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
     use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
     use { "hrsh7th/cmp-nvim-lua" }
-    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', commit = "14e287b5b1434cef322de9cc1ec6fda13b913f45" }
+    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp',
+        commit = "14e287b5b1434cef322de9cc1ec6fda13b913f45" }
 
     ------------------------------
     --- LINTERS and FORMATTERS ---
@@ -204,6 +205,7 @@ return packer.startup(function(use)
     use { "lewis6991/gitsigns.nvim", commit = "1e107c91c0c5e3ae72c37df8ffdd50f87fb3ebfa" }
     use { 'f-person/git-blame.nvim', commit = "1087c3c78ea9f7b7825a256e8fe1ec3af1ad88d0" }
     use { 'tpope/vim-fugitive', commit = "b411b753f805b969cca856e2ae51fdbab49880df" }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     ---------
     -- DAP --
