@@ -43,15 +43,16 @@ return packer.startup(function(use)
     ----------------
     ---- PACKER ----
     ----------------
-    use { "wbthomason/packer.nvim", commit = "3a9f9801f683946b9f1047d8f4bf9946c29e927d" } -- Have packer manage itself
 
+    use { "wbthomason/packer.nvim", commit = "3a9f9801f683946b9f1047d8f4bf9946c29e927d" } -- Have packer manage itself
     -------------
     --- UTILS ---
     -------------
     use { "nvim-lua/plenary.nvim", commit = "a3dafaa937921a4eb2ae65820c3479ab561e9ba3" } -- Useful lua functions used ny lots of plugins
     use { "windwp/nvim-autopairs", commit = "0a18e10a0c3fde190437567e40557dcdbbc89ea1" } -- Autopairs, integrates with both cmp and treesitter
     use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- closes buffers more intelligently
-    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', commit = "ba18a3bb31c35f16b4178ca69db097d0c6ba261a" }
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
+        commit = "ba18a3bb31c35f16b4178ca69db097d0c6ba261a" }
     use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" } -- makes neovim start faster
     use { "lukas-reineke/indent-blankline.nvim", commit = "c15bbe9f23d88b5c0b4ca45a446e01a0a3913707" } -- ident line
     use { "antoinemadec/FixCursorHold.nvim", commit = "5aa5ff18da3cdc306bb724cf1a138533768c9f5e" } -- This is needed to fix lsp
@@ -61,6 +62,7 @@ return packer.startup(function(use)
     use { "goolord/alpha-nvim", commit = "f457f7fadd5fdb6491422d4b8677c368bb2259d9" } -- initial dashboard
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- allows other plugins to use dot repeat, currenly used by lightspeed
     use { "windwp/nvim-spectre", commit = "c553eb47ad9d82f8452119ceb6eb209c930640ec" } -- find and replace TODO improve usage
+    use { 'ThePrimeagen/harpoon', commit = "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971" }
     -- Lua
     use({
         "gbprod/cutlass.nvim", -- d, x do not copy to clipboard
@@ -74,6 +76,17 @@ return packer.startup(function(use)
     use { 'rhysd/conflict-marker.vim', commit = "22b6133116795ea8fb6705ddca981aa8faecedda" } -- conflict marker helper
     use { 'JoosepAlviste/nvim-ts-context-commentstring', commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" } -- comment depending on context
     use { 'andymass/vim-matchup', commit = "5aa3e58db430bf158f7bd0f64387a1f66c43fa7c" } -- better %
+    -- use { 'bennypowers/nvim-regexplainer', -- regexplainer
+    --     config = function() require 'regexplainer'.setup({
+    --             mappings = {
+    --                 toggle = 'gr'
+    --             }
+    --         })
+    --     end,
+    --     requires = {
+    --         'nvim-treesitter/nvim-treesitter',
+    --         'MunifTanjim/nui.nvim',
+    --     } }
 
     -------------
     --- ICONS ---
@@ -104,9 +117,10 @@ return packer.startup(function(use)
         requires = "neovim/nvim-lspconfig",
         commit = "94bf6fcb1dc27bdad230d9385da085e72c390019"
     }
-    use { "j-hui/fidget.nvim", commit = "492492e7d50452a9ace8346d31f6d6da40439f0e", config = function() --unintrusive info about LSPs and stuff on corener
-        require "fidget".setup {}
-    end
+    use { "j-hui/fidget.nvim", commit = "492492e7d50452a9ace8346d31f6d6da40439f0e",
+        config = function() --unintrusive info about LSPs and stuff on corener
+            require "fidget".setup {}
+        end
     }
     use({
         "ghillb/cybu.nvim", -- better buffer cycling
@@ -218,7 +232,7 @@ return packer.startup(function(use)
     -----------------
     ----- TESTS -----
     -----------------
-    -- TODO: neotest ain't working
+    -- TODO neotest is not working
     -- use {
     --     "nvim-neotest/neotest",
     --     requires = {
@@ -230,6 +244,8 @@ return packer.startup(function(use)
     --         "vim-test/vim-test"
     --     }
     -- }
+    --
+    -- use { 'David-Kunz/jester', commit = "be6fdd511bce3343117977cab3ca686dd4d4c0d6" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

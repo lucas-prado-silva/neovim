@@ -88,8 +88,12 @@ vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<c
 )
 
 -- Testing
-keymap("n", "<leader>tt", ":neotest.run.run()<CR>", opts)
-keymap("n", "<leader>tf", ":neotest.run.run(vim.fn.expand('%'))<CR>", opts)
+-- These are not working yet
+-- keymap("n", "<leader>tt", ":lua require('neotest').run.run()<CR>", opts)
+-- keymap("n", "<leader>tf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", opts)
+-- keymap("n", "<leader>tjr", ":lua require('jester').run()<CR>", opts)
+-- keymap("n", "<leader>tjf", ":lua require('jester').run_file()<CR>", opts)
+-- keymap("n", "<leader>tjl", ":lua require('jester').run_last()<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
