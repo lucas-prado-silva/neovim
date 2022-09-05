@@ -76,6 +76,13 @@ return packer.startup(function(use)
     use { 'rhysd/conflict-marker.vim', commit = "22b6133116795ea8fb6705ddca981aa8faecedda" } -- conflict marker helper
     use { 'JoosepAlviste/nvim-ts-context-commentstring', commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" } -- comment depending on context
     use { 'andymass/vim-matchup', commit = "5aa3e58db430bf158f7bd0f64387a1f66c43fa7c" } -- better %
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({})
+        end
+    })
     -- use { 'bennypowers/nvim-regexplainer', -- regexplainer
     --     config = function() require 'regexplainer'.setup({
     --             mappings = {
