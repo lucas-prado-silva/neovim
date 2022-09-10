@@ -82,6 +82,15 @@ keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=
 keymap("n", "<leader>sv", "<cmd>lua require('spectre').open_visual()<CR>", opts)
 keymap("n", "<leader>sf", "<cmd>lua require('spectre').open_file_search()<CR>", opts)
 
+-- hlslens
+keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "<leader>n", ":noh<CR>", opts)
+
 -- trouble diagnostics
 vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",
     { silent = true, noremap = true }

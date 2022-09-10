@@ -12,7 +12,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
     filters = {
-        custom = { "^.git$" }
+        dotfiles = false
     },
     update_focused_file = {
         enable = true,
@@ -46,6 +46,10 @@ nvim_tree.setup {
             },
         },
     },
+    git = {
+        enable = true,
+        ignore = false
+    },
     diagnostics = {
         enable = true,
         show_on_dirs = true,
@@ -57,6 +61,7 @@ nvim_tree.setup {
         },
     },
     view = {
+        adaptive_size = true,
         width = 30,
         height = 30,
         side = "right",

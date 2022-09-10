@@ -1,52 +1,36 @@
--- setup must be called before loading the colorscheme
--- Default options:
--- require("gruvbox").setup({
---   undercurl = true,
---   underline = true,
---   bold = true,
---   italic = true,
---   strikethrough = true,
---   invert_selection = false,
---   invert_signs = false,
---   invert_tabline = false,
---   invert_intend_guides = false,
---   inverse = true, -- invert background for search, diffs, statuslines and errors
---   contrast = "", -- can be "hard", "soft" or empty string
---   overrides = {},
--- })
---
--- vim.cmd("colorscheme gruvbox")
+require('onedark').setup  {
+    -- Main options --
+    style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = true,  -- Show/hide background
+    term_colors = true, -- Change terminal color as per the selected theme style
+    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+    -- toggle theme style ---
+    toggle_style_key = "<leader>ts", -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
-local colors = require("catppuccin.palettes").get_palette()
-colors.none = "NONE"
-
-require("catppuccin").setup({
-    transparent_background = true,
-    custom_highlights = {
-        Comment = { fg = colors.overlay1 },
-        LineNr = { fg = colors.overlay1 },
-        CursorLine = { bg = colors.none },
-        CursorLineNr = { fg = colors.lavender },
-        DiagnosticVirtualTextError = { bg = colors.none },
-        DiagnosticVirtualTextWarn = { bg = colors.none },
-        DiagnosticVirtualTextInfo = { bg = colors.none },
-        DiagnosticVirtualTextHint = { bg = colors.none },
+    -- Change code style ---
+    -- Options are italic, bold, underline, none
+    -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+    code_style = {
+        comments = 'italic',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none'
     },
-    integrations = {
-        treesitter = true,
-        treesitter_context = true,
-        nvimtree = true,
-        neogit = true,
-        lsp_trouble = true,
-        lsp_saga = true,
-        gitsigns = true,
-        telescope = true,
-        notify = true,
-        hop = true,
-        dashboard = true,
-    }
-})
 
-vim.cmd [[colorscheme catppuccin]]
+    -- Custom Highlights --
+    colors = {}, -- Override default colors
+    highlights = {}, -- Override highlight groups
+
+    -- Plugins Config --
+    diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true,   -- use undercurl instead of underline for diagnostics
+        background = true,    -- use background color for virtual text
+    },
+}
+
+require('onedark').load()

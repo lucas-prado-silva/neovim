@@ -25,6 +25,7 @@ require("lucas.leap-config")
 require("lucas.spectre-config")
 require("lucas.cybu-config")
 require("lucas.tabnine-config")
+require("lucas.scrollbar-config")
 
 -- transparency
 vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')

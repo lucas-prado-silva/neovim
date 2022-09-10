@@ -63,7 +63,13 @@ return packer.startup(function(use)
     use { "tpope/vim-repeat", commit = "24afe922e6a05891756ecf331f39a1f6743d3d5a" } -- allows other plugins to use dot repeat, currenly used by lightspeed
     use { "windwp/nvim-spectre", commit = "c553eb47ad9d82f8452119ceb6eb209c930640ec" } -- find and replace TODO improve usage
     use { 'ThePrimeagen/harpoon', commit = "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971" }
-    -- Lua
+    use {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup {
+            }
+        end
+    }
     use({
         "gbprod/cutlass.nvim", -- d, x do not copy to clipboard
         config = function()
@@ -104,8 +110,8 @@ return packer.startup(function(use)
     --- THEMES ---
     --------------
     -- use({ 'projekt0n/github-nvim-theme' })
-    -- use { "ellisonleao/gruvbox.nvim", commit = "bf2885a95efdad7bd5e4794dd0213917770d79b7" }
     use { "catppuccin/nvim", as = "catppuccin", commit = "d4aa577d07197c4ca32f3bafb0aebb5b4b7dec9f" } -- nice theme
+    use 'navarasu/onedark.nvim'
 
     --------
     -- UI --
@@ -141,6 +147,8 @@ return packer.startup(function(use)
             }
         end,
     }
+    use { 'kevinhwang91/nvim-hlslens' }
+    use("petertriho/nvim-scrollbar")
 
     ----------------
     --- COMMENTS ---
