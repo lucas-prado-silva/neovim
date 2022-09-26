@@ -21,34 +21,49 @@ local on_attach = function(client, bufnr)
     -- Mappings.
     local opts = { noremap = true, silent = true }
 
+    -- go to declaration
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    -- go to definition
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    -- go to implementation
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+
+    -- Show code actions from LSP Saga
     buf_set_keymap('v', '<space>ca', '<cmd><C-U>Lspsaga range_code_action<CR>', opts)
     buf_set_keymap('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', opts)
+
+    -- Navigate through code diagnostics
     buf_set_keymap('n', '<leader>lj', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
     buf_set_keymap('n', '<leader>lk', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+
     -- Show line diagnostics
     buf_set_keymap("n", "<leader>ll", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+
     -- Show cursor diagnostic
-    buf_set_keymap("n", "<leader>ld", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
-    -- Outline
+    buf_set_keymap("n", "<leader>lc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+
+    -- Show Treesitter Outline
     buf_set_keymap("n", "<leader>lo", "<cmd>LSoutlineToggle<CR>", { silent = true })
+
+    -- Hover docs
     buf_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+
+    -- Open LSP saga finder
     buf_set_keymap('n', 'gf', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+
+    -- Open signature help in insert mode
     buf_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+
+    -- LSP Saga preview definition
     buf_set_keymap('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
+
+    -- LSP Saga Rename a variable
     buf_set_keymap('n', '<space>rr', '<Cmd>Lspsaga rename<CR>', opts)
+
+    -- Format the document
     buf_set_keymap('n', '<space>lf', '<Cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>', opts)
 
-    -- formatting
-    -- if client.server_capabilities.documentFormattingProvider then
-    --     vim.api.nvim_create_autocmd("BufWritePre", {
-    --         group = vim.api.nvim_create_augroup("Format", { clear = true }),
-    --         buffer = bufnr,
-    --         callback = function() vim.lsp.buf.formatting_seq_sync() end
-    --     })
-    -- end
+    -- Attach Navic to the current buffer
     navic.attach(client, bufnr)
 end
 
@@ -123,7 +138,7 @@ nvim_lsp.tailwindcss.setup {}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
+    underline = false, -- testing on false, might break something
     update_in_insert = false,
     virtual_text = { spacing = 4, prefix = "●" },
     severity_sort = true,
@@ -146,4 +161,3 @@ vim.diagnostic.config({
         source = "always", -- Or "if_many"
     },
 })
-

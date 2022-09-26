@@ -88,14 +88,10 @@ cmp.setup {
             -- Kind icons
             vim_item.kind = kind_icons[vim_item.kind]
 
-            -- if entry.source.name == "cmp_tabnine" then
-            --   vim_item.kind = icons.misc.Robot
-            --   vim_item.kind_hl_group = "CmpItemKindTabnine"
-            -- end
-            -- if entry.source.name == "copilot" then
-            --   vim_item.kind = icons.git.Octoface
-            --   vim_item.kind_hl_group = "CmpItemKindCopilot"
-            -- end
+            if entry.source.name == "cmp_tabnine" then
+                vim_item.kind = icons.misc.Robot
+                vim_item.kind_hl_group = "CmpItemKindTabnine"
+            end
 
             if entry.source.name == "emoji" then
                 vim_item.kind = icons.misc.Smiley
@@ -127,8 +123,8 @@ cmp.setup {
         { name = "luasnip", group_index = 2 },
         { name = "buffer", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
-        -- { name = "crates", group_index = 3 },
-        -- { name = "emoji", group_index = 2 },
+        { name = "crates", group_index = 3 },
+        { name = "emoji", group_index = 3 },
     },
     sorting = {
         priority_weight = 2,

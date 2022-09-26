@@ -18,9 +18,8 @@ vim.g.maplocalleader = " "
 --  term_mode = "t",
 --  command_mode = "c",
 
-
 -- Normal --
--- Easier stuff
+-- Use leader w to save
 keymap("n", "<leader>w", ":w<CR>", opts)
 
 -- Better window navigation
@@ -35,6 +34,7 @@ keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
 keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
 keymap("n", "<leader>tn", ":tabn<CR>", { noremap = true })
 keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
+
 -- move current tab to previous position
 keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
@@ -53,8 +53,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-w>", ":Bdelete<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("n", "<leader>mk", "<Esc>:m +1<CR>", opts)
+keymap("n", "<leader>mj", "<Esc>:m -2<CR>", opts)
 
 -- Nvim tree
 keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
@@ -127,10 +127,10 @@ keymap("v", ">", ">gv", opts)
 
 -- Visual Block --
 -- Move text up and down
--- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
--- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal -
 -- Better terminal navigation

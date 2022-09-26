@@ -52,11 +52,11 @@ return packer.startup(function(use)
     use { "windwp/nvim-autopairs", commit = "0a18e10a0c3fde190437567e40557dcdbbc89ea1" } -- Autopairs, integrates with both cmp and treesitter
     use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- closes buffers more intelligently
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
-        commit = "ba18a3bb31c35f16b4178ca69db097d0c6ba261a" }
+        commit = "ba18a3bb31c35f16b4178ca69db097d0c6ba261a" } -- code folding
     use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" } -- makes neovim start faster
     use { "lukas-reineke/indent-blankline.nvim", commit = "c15bbe9f23d88b5c0b4ca45a446e01a0a3913707" } -- ident line
     use { "antoinemadec/FixCursorHold.nvim", commit = "5aa5ff18da3cdc306bb724cf1a138533768c9f5e" } -- This is needed to fix lsp
-    use { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" }
+    use { "folke/which-key.nvim", commit = "bd4411a2ed4dd8bb69c125e339d837028a6eea71" } -- shows keyboard shortcuts in floating window
     use { "nacro90/numb.nvim", commit = "453c50ab921fa066fb073d2fd0f826cb036eaf7b" } --peeks the code when doing something like :35
     use { "ahmedkhalf/project.nvim", commit = "090bb11ee7eb76ebb9d0be1c6060eac4f69a240f" } -- utils to navigate to projects, is used inside telescope
     use { "goolord/alpha-nvim", commit = "f457f7fadd5fdb6491422d4b8677c368bb2259d9" } -- initial dashboard
@@ -79,7 +79,9 @@ return packer.startup(function(use)
             })
         end
     })
+    -- TODO not working
     use { 'rhysd/conflict-marker.vim', commit = "22b6133116795ea8fb6705ddca981aa8faecedda" } -- conflict marker helper
+    -- TODO not working
     use { 'JoosepAlviste/nvim-ts-context-commentstring', commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" } -- comment depending on context
     use { 'andymass/vim-matchup', commit = "5aa3e58db430bf158f7bd0f64387a1f66c43fa7c" } -- better %
     use({
@@ -103,7 +105,8 @@ return packer.startup(function(use)
     --------
     -- UI --
     --------
-    use { 'nanozuki/tabby.nvim', commit = "916c9e56d043906a441cd9f905e2ca1f5c4dddb0"}
+    -- TODO not working, not currently in use
+    use { 'nanozuki/tabby.nvim', commit = "916c9e56d043906a441cd9f905e2ca1f5c4dddb0" }
     use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' }, -- file tree
         commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
     use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
@@ -132,8 +135,7 @@ return packer.startup(function(use)
     use {
         'gelguy/wilder.nvim',
         config = function()
-            require "wilder".setup {
-            }
+            -- config goes here
         end,
     }
     use { 'kevinhwang91/nvim-hlslens' }
