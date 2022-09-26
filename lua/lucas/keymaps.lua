@@ -29,6 +29,17 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- tabby
+keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
+keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
+keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
+keymap("n", "<leader>tn", ":tabn<CR>", { noremap = true })
+keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
+-- move current tab to previous position
+keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
+-- move current tab to next position
+keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+
 -- Resize with arrows
 keymap('n', '<leader>rj', ':resize +3 <CR>', opts)
 keymap('n', '<leader>rk', ':resize -3 <CR>', opts)
@@ -64,6 +75,7 @@ keymap("n", "<leader>fgh", ":Telescope git_stash<CR>", opts)
 keymap("n", "<leader>fe", ":Telescope file_browser<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope emoji<CR>", opts)
 keymap("n", "<leader>fy", ":Telescope neoclip<CR>", opts)
+keymap("n", "<leader>fl", ":Telescope resume<CR>", opts)
 
 -- Diff view
 keymap("n", "<leader>gdo", ":DiffviewOpen<CR>", opts)

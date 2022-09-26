@@ -26,8 +26,8 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('v', '<space>ca', '<cmd><C-U>Lspsaga range_code_action<CR>', opts)
     buf_set_keymap('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', opts)
-    buf_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+    buf_set_keymap('n', '<leader>lj', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+    buf_set_keymap('n', '<leader>lk', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
     -- Show line diagnostics
     buf_set_keymap("n", "<leader>ll", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
     -- Show cursor diagnostic

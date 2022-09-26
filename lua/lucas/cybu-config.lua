@@ -17,5 +17,5 @@ cybu.setup({
             }
         }
     },
-    display_time = 300
+    display_time = 500
 })

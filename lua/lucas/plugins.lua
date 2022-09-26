@@ -89,17 +89,6 @@ return packer.startup(function(use)
             require("nvim-surround").setup({})
         end
     })
-    -- use { 'bennypowers/nvim-regexplainer', -- regexplainer
-    --     config = function() require 'regexplainer'.setup({
-    --             mappings = {
-    --                 toggle = 'gr'
-    --             }
-    --         })
-    --     end,
-    --     requires = {
-    --         'nvim-treesitter/nvim-treesitter',
-    --         'MunifTanjim/nui.nvim',
-    --     } }
 
     -------------
     --- ICONS ---
@@ -109,17 +98,17 @@ return packer.startup(function(use)
     --------------
     --- THEMES ---
     --------------
-    -- use({ 'projekt0n/github-nvim-theme' })
-    use { "catppuccin/nvim", as = "catppuccin", commit = "d4aa577d07197c4ca32f3bafb0aebb5b4b7dec9f" } -- nice theme
-    use 'navarasu/onedark.nvim'
+    use "EdenEast/nightfox.nvim"
 
     --------
     -- UI --
     --------
+    use { 'nanozuki/tabby.nvim', commit = "916c9e56d043906a441cd9f905e2ca1f5c4dddb0"}
     use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' }, -- file tree
         commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
     use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
-    use { "akinsho/bufferline.nvim", commit = "fb7b17362eb6eedc57c37bdfd364f8e7d8149e31" } -- top bar with buffers
+    use { "akinsho/bufferline.nvim", requires = 'kyazdani42/nvim-web-devicons',
+        commit = "fb7b17362eb6eedc57c37bdfd364f8e7d8149e31" } -- top bar with buffers
     use { "christianchiarulli/lualine.nvim", commit = "c0510ddec86070dbcacbd291736de27aabbf3bfe" } --status bar at the bottom
     use "norcalli/nvim-colorizer.lua" -- show color on code might be chill not to pin
     use { "rcarriga/nvim-notify", commit = "cf5dc4f7095673b8402c51bf80448596d7b97fc6" } -- UI library
@@ -189,6 +178,7 @@ return packer.startup(function(use)
     -- LSP --
     ---------
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "f3c53d225ada93a99bfd818e1c40012400e2dc55" }
+    use { 'nvim-treesitter/nvim-treesitter-context', commit = "8d0759eb798fee2e1201b26c3279713ac67c44c2" }
     use { "williamboman/mason.nvim", commit = "924923882bcc027268fdfb77e72df60b058d5e69" } --LSP manager
     use { "williamboman/mason-lspconfig.nvim", commit = "74c45b3663aeb4c9065a4b29355d9c1c8a8c00b5" } -- helper for lsp
     use { "neovim/nvim-lspconfig", commit = "636ce36c30725391486377850bf8460dc0723ae2" } -- enable lsp

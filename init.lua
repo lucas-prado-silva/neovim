@@ -26,7 +26,13 @@ require("lucas.spectre-config")
 require("lucas.cybu-config")
 require("lucas.tabnine-config")
 require("lucas.scrollbar-config")
+require("lucas.context-config")
+-- require("lucas.tabby-config")
 
 -- transparency
 vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
 vim.cmd('hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE')
+
+-- show tabby
+-- vim.o.showtabline = 2
+

@@ -19,6 +19,8 @@ nvim_tree.setup {
         update_cwd = true,
     },
     renderer = {
+        add_trailing = true,
+        highlight_git = true,
         root_folder_modifier = ":t",
         icons = {
             glyphs = {
