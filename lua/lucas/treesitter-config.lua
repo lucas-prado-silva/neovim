@@ -40,7 +40,7 @@ configs.setup {
     },
     autotag = {
         enable = true,
-        disable = { "xml", "markdown" },
+        disable = { "markdown" },
     },
     rainbow = {
         enable = true,

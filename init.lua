@@ -27,6 +27,7 @@ require("lucas.cybu-config")
 require("lucas.tabnine-config")
 require("lucas.scrollbar-config")
 require("lucas.context-config")
+require("lucas.luasnip-config")
 -- require("lucas.tabby-config")
 
 -- transparency

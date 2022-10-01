@@ -15,7 +15,7 @@ telescope.setup {
         file_ignore_patterns = {
             ".git/",
             "target/",
-            "docs/",
+            -- "docs/",
             "vendor/*",
             "%.lock",
             "__pycache__/*",
@@ -30,7 +30,7 @@ telescope.setup {
             "%.ttf",
             "%.webp",
             ".dart_tool/",
-            ".github/",
+            -- ".github/",
             ".gradle/",
             ".idea/",
             ".settings/",
