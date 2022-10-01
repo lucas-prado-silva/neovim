@@ -2,8 +2,8 @@ require("impatient")
 require("lucas.options")
 require("lucas.keymaps")
 require("lucas.plugins")
-require("lucas.mason-config")
 require("lucas.colorscheme-config")
+require("lucas.mason-config")
 require("lucas.lsp-config")
 require("lucas.cmp-config")
 require("lucas.nvim-tree-config")
@@ -31,8 +31,8 @@ require("lucas.luasnip-config")
 -- require("lucas.tabby-config")
 
 -- transparency
-vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
-vim.cmd('hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE')
+-- vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE')
 
 -- show tabby
 -- vim.o.showtabline = 2

@@ -8,11 +8,11 @@ cybu.setup({
     behavior = {
         mode = {
             default = {
-                switch = 'on_close',
+                switch = 'immediate',
                 view = 'paging'
             },
             last_used = {
-                switch = 'on_close',
+                switch = 'immediate',
                 view = 'paging'
             }
         }

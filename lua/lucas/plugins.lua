@@ -100,7 +100,8 @@ return packer.startup(function(use)
     --------------
     --- THEMES ---
     --------------
-    use "EdenEast/nightfox.nvim"
+    -- use "EdenEast/nightfox.nvim"
+	use 'shaunsingh/nord.nvim'
 
     --------
     -- UI --
@@ -111,7 +112,7 @@ return packer.startup(function(use)
         commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
     use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
     use { "akinsho/bufferline.nvim", requires = 'kyazdani42/nvim-web-devicons',
-        commit = "fb7b17362eb6eedc57c37bdfd364f8e7d8149e31" } -- top bar with buffers
+        commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" } -- top bar with buffers
     use { "christianchiarulli/lualine.nvim", commit = "c0510ddec86070dbcacbd291736de27aabbf3bfe" } --status bar at the bottom
     use "norcalli/nvim-colorizer.lua" -- show color on code might be chill not to pin
     use { "rcarriga/nvim-notify", commit = "cf5dc4f7095673b8402c51bf80448596d7b97fc6" } -- UI library

@@ -67,6 +67,7 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope oldfiles<CR>", opts)
 
 keymap("n", "<leader>fgf", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>fgc", ":Telescope git_commits<CR>", opts)
