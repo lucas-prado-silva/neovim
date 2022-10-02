@@ -30,13 +30,13 @@ if not status_ok then
 end
 
 -- Have packer use a popup window
--- packer.init {
--- 	display = {
--- 		open_fn = function()
--- 			return require("packer.util").float { border = "rounded" }
--- 		end,
--- 	},
--- }
+packer.init {
+	display = {
+		open_fn = function()
+			return require("packer.util").float { border = "rounded" }
+		end,
+	},
+}
 
 -- Install your plugins here
 return packer.startup(function(use)
@@ -48,6 +48,18 @@ return packer.startup(function(use)
 	-------------
 	--- UTILS ---
 	-------------
+	-- IDE features
+	use {
+		"Dax89/ide.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "rcarriga/nvim-notify" }, -- Notifications Popup (Optional)
+			{ "stevearc/dressing.nvim" }, -- Improved UI (Optional)
+			{ "mfussenegger/nvim-dap" }, -- DAP Support (Optional)
+			{ "rcarriga/nvim-dap-ui" }, -- DAP-UI Support (Optional)
+		}
+	}
+
 	use { "nvim-lua/plenary.nvim", commit = "a3dafaa937921a4eb2ae65820c3479ab561e9ba3" } -- Useful lua functions used by lots of plugins
 
 	use { "antoinemadec/FixCursorHold.nvim", commit = "5aa5ff18da3cdc306bb724cf1a138533768c9f5e" } -- This is needed to fix lsp
@@ -55,9 +67,6 @@ return packer.startup(function(use)
 	use { "windwp/nvim-autopairs", commit = "0a18e10a0c3fde190437567e40557dcdbbc89ea1" } -- Autopairs, integrates with both cmp and treesitter
 
 	use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- closes buffers more intelligently
-
-	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
-		commit = "ba18a3bb31c35f16b4178ca69db097d0c6ba261a" } -- code folding
 
 	use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" } -- makes neovim start faster
 
@@ -136,12 +145,6 @@ return packer.startup(function(use)
 		commit = "94bf6fcb1dc27bdad230d9385da085e72c390019"
 	}
 
-	-- use { "j-hui/fidget.nvim", commit = "492492e7d50452a9ace8346d31f6d6da40439f0e",
-	-- 	config = function() --unintrusive info about LSPs and stuff on corener
-	-- 		require "fidget".setup {}
-	-- 	end
-	-- }
-
 	use({
 		"ghillb/cybu.nvim", -- better buffer cycling
 		commit = "df562d9f4692b58d00348aa5b91981e2347c974d",
@@ -167,9 +170,9 @@ return packer.startup(function(use)
 		commit = "98b1ebf198836bdc226c0562b9f906584e6c400e", config = function()
 			require("todo-comments").setup()
 		end
-	} -- colors the comments TODO configure this more
+	} -- colors the comments
 
-	use { "numToStr/Comment.nvim", commit = "80e7746e42fa685077a7941e9022308c7ad6adf8" } -- allows comment shortcuts TODO seach config
+	use { "numToStr/Comment.nvim", commit = "80e7746e42fa685077a7941e9022308c7ad6adf8" } -- allows comment shortcuts
 
 	----------------
 	--- TERMINAL ---
@@ -196,10 +199,10 @@ return packer.startup(function(use)
 		end,
 	}
 
-	use "xiyaowong/telescope-emoji.nvim" -- search for emojis 
+	use "xiyaowong/telescope-emoji.nvim" -- search for emojis
 
 	---------
-	-- LSP -- TODO check config for all of these
+	-- LSP --
 	---------
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "f3c53d225ada93a99bfd818e1c40012400e2dc55" }
 
@@ -224,7 +227,7 @@ return packer.startup(function(use)
 	use { 'glepnir/lspsaga.nvim', commit = "777f3c8b7eea9eb57ef4f5f73452e3069360eb5d" } -- LSP UI library
 
 	---------
-	-- CMP -- TODO check config for all of these
+	-- CMP --
 	---------
 	use { "hrsh7th/nvim-cmp", commit = "058100d81316239f3874064064f0f0c5d43c2103" } -- completion engine
 
@@ -257,7 +260,7 @@ return packer.startup(function(use)
 	-- use 'numToStr/prettierrc.nvim' -- TODO check this
 
 	----------------
-	--- SNIPPETS --- TODO check configs for these
+	--- SNIPPETS ---
 	----------------
 	use { "L3MON4D3/LuaSnip", commit = "b5cfdd0db5889bcd7c9bd6bdfb3fe83cb0a83bd1" } --snippet engine
 
@@ -266,7 +269,7 @@ return packer.startup(function(use)
 	use "b0o/SchemaStore.nvim"
 
 	---------
-	-- GIT -- TODO check configs for these and erase unused
+	-- GIT --
 	---------
 	use { "lewis6991/gitsigns.nvim", commit = "1e107c91c0c5e3ae72c37df8ffdd50f87fb3ebfa" }
 
@@ -284,7 +287,7 @@ return packer.startup(function(use)
 	-- use "Pocco81/DAPInstall.nvim"
 
 	-----------------
-	----- TESTS ----- TODO config this better
+	----- TESTS -----
 	-----------------
 	use {
 		"nvim-neotest/neotest",
@@ -308,6 +311,15 @@ return packer.startup(function(use)
 	-- 		require "fidget".setup {}
 	-- 	end
 	-- }
+	--
+	-- use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
+	-- 	commit = "ba18a3bb31c35f16b4178ca69db097d0c6ba261a" } -- code folding
+	--
+	use { "j-hui/fidget.nvim", commit = "492492e7d50452a9ace8346d31f6d6da40439f0e",
+		config = function() --unintrusive info about LSPs and stuff on corener
+			require "fidget".setup {}
+		end
+	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

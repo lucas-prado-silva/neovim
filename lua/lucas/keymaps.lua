@@ -28,11 +28,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- move current tab to previous position
-keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
--- move current tab to next position
-keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
-
 -- Resize with arrows
 keymap('n', '<leader>rj', ':resize +3 <CR>', opts)
 keymap('n', '<leader>rk', ':resize -3 <CR>', opts)
@@ -43,13 +38,15 @@ keymap('n', '<leader>rh', ':vertical resize -3 <CR>', opts)
 -- Naviagate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Delete buffer
 keymap("n", "<S-w>", ":Bdelete<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<leader>mk", "<Esc>:m +1<CR>", opts)
 keymap("n", "<leader>mj", "<Esc>:m -2<CR>", opts)
 
--- Nvim tree
+-- File tree
 keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
 
 -- Toggle git blame

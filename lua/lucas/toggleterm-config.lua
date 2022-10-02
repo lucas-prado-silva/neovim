@@ -63,7 +63,7 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
-keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>gl", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
 
 local node = Terminal:new { cmd = "node", hidden = true }
 
