@@ -2,13 +2,10 @@ local neotest = require("neotest")
 
 neotest.setup({
     adapters = {
-        ..., -- Any other adapters
         require("neotest-vim-test")({ ignore_filetypes = { "python", "lua" } }),
-        -- Or to only allow specified file types
-        -- require("neotest-vim-test")({ allow_file_types = { "haskell", "elixir" } }),
         require('neotest-jest')({
-            jestCommand = "npm test --",
-            -- jestConfigFile = "jest.config.ts",
+            jestCommand = "npx jest --",
+            jestConfigFile = "jest.config.ts",
             env = { CI = true },
             cwd = function()
                 return vim.fn.getcwd()

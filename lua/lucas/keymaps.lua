@@ -28,13 +28,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- tabby
-keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
-keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
-keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
-keymap("n", "<leader>tn", ":tabn<CR>", { noremap = true })
-keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
-
 -- move current tab to previous position
 keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
@@ -113,7 +106,7 @@ vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<c
 
 -- Testing
 -- These are not working yet
--- keymap("n", "<leader>tt", ":lua require('neotest').run.run()<CR>", opts)
+keymap("n", "<leader>tt", ":lua require('neotest').run.run()<CR>", opts)
 -- keymap("n", "<leader>tf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", opts)
 -- keymap("n", "<leader>tjr", ":lua require('jester').run()<CR>", opts)
 -- keymap("n", "<leader>tjf", ":lua require('jester').run_file()<CR>", opts)
