@@ -1,7 +1,5 @@
 local wk = require("which-key")
 
--- TODO update this
-
 wk.register({
 	f = {
 		name = "find",

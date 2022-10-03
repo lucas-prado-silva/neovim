@@ -124,6 +124,29 @@ return packer.startup(function(use)
 	use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' }, -- file tree
 		commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
 
+	-- This makes cmdline stuff open on a pop up window
+	use({
+		"folke/noice.nvim",
+		event = "VimEnter",
+		config = function()
+			require("noice").setup()
+		end,
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+			"hrsh7th/nvim-cmp",
+		}
+	})
+
+	-- show LSP diagnostics on multiple lines instead of virtual text
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
+
 	use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
 
 	use { "akinsho/bufferline.nvim", requires = 'kyazdani42/nvim-web-devicons',

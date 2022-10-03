@@ -4,7 +4,7 @@ require("lucas.keymaps")
 require("lucas.plugins")
 require("lucas.indent-blankline-config")
 require("lucas.colorscheme-config")
-require("lucas.ide-config")
+-- require("lucas.ide-config")
 require("lucas.illuminate-config")
 require("lucas.mason-config")
 require("lucas.lsp-config")
@@ -32,6 +32,13 @@ require("lucas.scrollbar-config")
 require("lucas.context-config")
 require("lucas.luasnip-config")
 require("lucas.neotest-config")
+require("lucas.noice-config")
+require("lucas.notify-config")
+
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+	virtual_text = false,
+})
 
 -- transparency
 -- vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
@@ -39,4 +46,3 @@ require("lucas.neotest-config")
 
 -- show tabby
 -- vim.o.showtabline = 2
-
