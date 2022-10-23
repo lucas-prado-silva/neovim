@@ -1,11 +1,18 @@
+-- Make neovim start faster
 require("impatient")
+
+-- Use options
 require("lucas.options")
-require("lucas.keymaps")
+
+-- Declare plugins
 require("lucas.plugins")
+
+-- Declare keymaps
+require("lucas.keymaps")
+
+-- require("lucas.noice-config")
 require("lucas.indent-blankline-config")
 require("lucas.colorscheme-config")
--- require("lucas.ide-config")
-require("lucas.illuminate-config")
 require("lucas.mason-config")
 require("lucas.lsp-config")
 require("lucas.cmp-config")
@@ -32,17 +39,16 @@ require("lucas.scrollbar-config")
 require("lucas.context-config")
 require("lucas.luasnip-config")
 require("lucas.neotest-config")
-require("lucas.noice-config")
 require("lucas.notify-config")
 
--- Disable virtual_text since it's redundant due to lsp_lines.
-vim.diagnostic.config({
-	virtual_text = false,
-})
+-- require("lucas.neorg-config")
 
 -- transparency
 -- vim.cmd('hi! Normal ctermbg=NONE guibg=NONE')
 -- vim.cmd('hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE')
 
--- show tabby
--- vim.o.showtabline = 2
+-- Disable virtual_text since it's redundant due to lsp_lines.
+-- vim.diagnostic.config({
+-- 	virtual_text = false,
+-- })
+

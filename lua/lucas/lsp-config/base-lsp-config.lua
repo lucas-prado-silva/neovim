@@ -55,7 +55,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', '<space>rr', '<Cmd>Lspsaga rename<CR>', opts)
 
 	-- Format the document
-	buf_set_keymap('n', '<space>lf', '<Cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>', opts)
+	buf_set_keymap('n', '<space>lf', '<Cmd>lua vim.lsp.buf.format ()<CR>', opts)
 
 	-- Attach Navic to the current buffer
 	navic.attach(client, bufnr)
@@ -112,6 +112,18 @@ capabilities.textDocument.completion.completionItem = {
 	},
 }
 
+local rt = require("rust-tools")
+rt.setup({
+	server = {
+		on_attach = function(_, bufnr)
+			-- Hover actions
+			vim.keymap.set("n", "<leader>ca", rt.hover_actions.hover_actions, { buffer = bufnr })
+			-- Code action groups
+			vim.keymap.set("n", "<Leader>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+		end,
+	},
+})
+
 nvim_lsp.flow.setup {
 	on_attach = on_attach,
 	capabilities = capabilities
@@ -150,7 +162,7 @@ nvim_lsp.tailwindcss.setup {}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
-	underline = false, -- testing on false, might break something
+	underline = false,
 	update_in_insert = false,
 	virtual_text = { spacing = 4, prefix = "●" },
 	severity_sort = true,

@@ -43,22 +43,22 @@ return packer.startup(function(use)
 	----------------
 	---- PACKER ----
 	----------------
-	use { "wbthomason/packer.nvim", commit = "3a9f9801f683946b9f1047d8f4bf9946c29e927d" } -- Have packer manage itself
+	use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
 
 	-------------
 	--- UTILS ---
 	-------------
 	-- IDE features
-	use {
-		"Dax89/ide.nvim",
-		requires = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "rcarriga/nvim-notify" }, -- Notifications Popup (Optional)
-			{ "stevearc/dressing.nvim" }, -- Improved UI (Optional)
-			{ "mfussenegger/nvim-dap" }, -- DAP Support (Optional)
-			{ "rcarriga/nvim-dap-ui" }, -- DAP-UI Support (Optional)
-		}
-	}
+	-- use {
+	-- 	"Dax89/ide.nvim",
+	-- 	requires = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 		{ "rcarriga/nvim-notify" }, -- Notifications Popup (Optional)
+	-- 		{ "stevearc/dressing.nvim" }, -- Improved UI (Optional)
+	-- 		{ "mfussenegger/nvim-dap" }, -- DAP Support (Optional)
+	-- 		{ "rcarriga/nvim-dap-ui" }, -- DAP-UI Support (Optional)
+	-- 	}
+	-- }
 
 	use { "nvim-lua/plenary.nvim", commit = "a3dafaa937921a4eb2ae65820c3479ab561e9ba3" } -- Useful lua functions used by lots of plugins
 
@@ -98,8 +98,6 @@ return packer.startup(function(use)
 	-- TODO not working
 	-- use { 'JoosepAlviste/nvim-ts-context-commentstring', commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" } -- comment depending on context
 
-	use { 'andymass/vim-matchup', commit = "5aa3e58db430bf158f7bd0f64387a1f66c43fa7c" } -- better %
-
 	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -113,10 +111,22 @@ return packer.startup(function(use)
 	-------------
 	use { "kyazdani42/nvim-web-devicons", commit = "2d02a56189e2bde11edd4712fea16f08a6656944" } -- cool icons
 
+	---------------
+	---- NEORG ----
+	---------------
+	use {
+		"nvim-neorg/neorg",
+		requires = "nvim-lua/plenary.nvim",
+		tag = "0.0.15",
+		ft = "norg",
+		after = "nvim-treesitter", -- You may want to specify Telescope here as well
+		run = ":Neorg sync-parsers", -- This updates the treesitter parsers
+	}
+
 	--------------
 	--- THEMES ---
 	--------------
-	use 'shaunsingh/nord.nvim'
+	use { "ellisonleao/gruvbox.nvim" }
 
 	--------
 	-- UI --
@@ -125,27 +135,27 @@ return packer.startup(function(use)
 		commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
 
 	-- This makes cmdline stuff open on a pop up window
-	use({
-		"folke/noice.nvim",
-		event = "VimEnter",
-		config = function()
-			require("noice").setup()
-		end,
-		requires = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-			"hrsh7th/nvim-cmp",
-		}
-	})
+	-- use({
+	-- 	"folke/noice.nvim",
+	-- 	event = "VimEnter",
+	-- 	commit = "613e16ea6683eaab25c8dcdc62a9a9a7e58d16b6",
+	-- 	config = function()
+	-- 		require("noice").setup()
+	-- 	end,
+	-- 	requires = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 		"hrsh7th/nvim-cmp",
+	-- 	}
+	-- })
 
 	-- show LSP diagnostics on multiple lines instead of virtual text
-	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	})
+	-- use({
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	config = function()
+	-- 		require("lsp_lines").setup()
+	-- 	end,
+	-- })
 
 	use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
 
@@ -158,7 +168,7 @@ return packer.startup(function(use)
 
 	use { "rcarriga/nvim-notify", commit = "cf5dc4f7095673b8402c51bf80448596d7b97fc6" } -- UI library
 
-	use { "ggandor/leap.nvim", commit = "5cd1edbe9ecd05c9765b656d4a8016065135873f" } -- better buffer navigation
+	use { "ggandor/leap.nvim", commit = "5a09c30bf676d1392ff00eb9a41e0a1fc9b60a1b" } -- better buffer navigation
 
 	use { "RRethy/vim-illuminate", commit = "9179f9cb3d7a97c5724d215c671b6eb578e63520" } -- illuminate selected cursor word
 
@@ -302,12 +312,18 @@ return packer.startup(function(use)
 
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
+	----------
+	-- RUST --
+	----------
+	use 'simrat39/rust-tools.nvim'
+
 	---------
 	-- DAP --
 	---------
 	-- use "mfussenegger/nvim-dap"
 	-- use "rcarriga/nvim-dap-ui"
 	-- use "Pocco81/DAPInstall.nvim"
+	-- use "Pocco81/dap-buddy.nvim",
 
 	-----------------
 	----- TESTS -----

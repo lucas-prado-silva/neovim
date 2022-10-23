@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Use leader w to save
-keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>s", ":w<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -68,25 +68,32 @@ keymap("n", "<leader>fgh", ":Telescope git_stash<CR>", opts)
 keymap("n", "<leader>fe", ":Telescope file_browser<CR>", opts)
 keymap("n", "<leader>fm", ":Telescope emoji<CR>", opts)
 keymap("n", "<leader>fy", ":Telescope neoclip<CR>", opts)
-keymap("n", "<leader>fl", ":Telescope resume<CR>", opts)
+keymap("n", "<leader>fz", ":Telescope resume<CR>", opts)
+
+keymap("n", "<leader>flr", ":Telescope lsp_references<CR>", opts)
+keymap("n", "<leader>flg", ":Telescope lsp_diagnostics bufnr=0<CR>", opts)
+keymap("n", "<leader>fld", ":Telescope lsp_definitions<CR>", opts)
+keymap("n", "<leader>fli", ":Telescope lsp_implementations<CR>", opts)
+
+keymap("n", "<leader>fq", ":Telescope planets<CR>", opts)
 
 -- Diff view
 keymap("n", "<leader>gdo", ":DiffviewOpen<CR>", opts)
 keymap("n", "<leader>gdc", ":DiffviewClose<CR>", opts)
 
 -- Alpha
-keymap("n", "<leader>a", ":Alpha<CR>", opts)
+keymap("n", "<leader>aa", ":Alpha<CR>", opts)
 
 -- Cybu
 keymap("n", "<tab>", ":CybuLastusedPrev<CR>", opts)
 keymap("n", "<s-tab>", ":CybuLastusedNext<CR>", opts)
 
 -- Spectre
-keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
-keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
-keymap("n", "<leader>sv", "<cmd>lua require('spectre').open_visual()<CR>", opts)
-keymap("n", "<leader>sf", "<cmd>lua require('spectre').open_file_search()<CR>", opts)
-
+-- keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
+-- keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
+-- keymap("n", "<leader>sv", "<cmd>lua require('spectre').open_visual()<CR>", opts)
+-- keymap("n", "<leader>sf", "<cmd>lua require('spectre').open_file_search()<CR>", opts)
+--
 -- hlslens
 keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
 keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
@@ -98,7 +105,7 @@ keymap("n", "<leader>n", ":noh<CR>", opts)
 
 -- trouble diagnostics
 vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",
-    { silent = true, noremap = true }
+	{ silent = true, noremap = true }
 )
 
 -- Testing

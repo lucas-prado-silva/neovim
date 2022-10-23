@@ -1,16 +1,31 @@
--- skip search_count messages instead of showing them as virtual text
-require("noice").setup({
-	routes = {
-		{
-			filter = { event = "msg_show", kind = "search_count" },
-			opts = { skip = true },
-		},
-		{
-			view = "split",
-			filter = { event = "msg_show", min_height = 20 },
-		},
-	},
-	popup = {
-		position = "100%"
-	}
-})
+-- require("noice").setup({
+	-- routes = {
+	-- 	-- skips the search count messages
+	-- 	{
+	-- 		filter = { event = "msg_show", kind = "search_count" },
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	-- shows messages with high length in a split bugger
+	-- 	{
+	-- 		view = "split",
+	-- 		filter = { event = "msg_show", min_height = 20 },
+	-- 	},
+	-- 	-- hides the on save messages (was bugged and only rendered '<')
+	-- 	{
+	-- 		filter = {
+	-- 			event = "msg_show",
+	-- 			kind = "",
+	-- 			find = "<",
+	-- 		},
+	-- 		opts = { skip = true },
+	-- 	},
+	-- 	{
+	-- 		filter = {
+	-- 			event = "cmdline",
+	-- 			find = "^%s*[/?]",
+	-- 		},
+	-- 		view = "cmdline",
+	-- 	},
+	-- },
+-- 	status = {},
+-- })

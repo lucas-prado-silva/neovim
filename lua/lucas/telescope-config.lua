@@ -97,8 +97,8 @@ telescope.setup {
 
 				["<c-d>"] = require("telescope.actions").delete_buffer,
 
-				-- ["<C-u>"] = actions.preview_scrolling_up,
-				-- ["<C-d>"] = actions.preview_scrolling_down,
+				["<C-u>"] = actions.preview_scrolling_up,
+				["<C-d>"] = actions.preview_scrolling_down,
 
 				["<PageUp>"] = actions.results_scrolling_up,
 				["<PageDown>"] = actions.results_scrolling_down,
@@ -152,6 +152,10 @@ telescope.setup {
 		-- }
 		-- Now the picker_config_key will be applied every time you call this
 		-- builtin picker
+		planets = {
+			show_pluto = true,
+			show_moon = true,
+		},
 	},
 	extensions = {
 		media_files = {
