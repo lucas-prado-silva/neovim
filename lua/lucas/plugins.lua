@@ -276,8 +276,8 @@ return packer.startup(function(use)
 
 	use { "hrsh7th/cmp-nvim-lua" } -- cmp for lua
 
-	use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp',
-		commit = "14e287b5b1434cef322de9cc1ec6fda13b913f45" }
+	-- use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp',
+	-- 	commit = "14e287b5b1434cef322de9cc1ec6fda13b913f45" }
 
 	use { 'windwp/nvim-ts-autotag' }
 
