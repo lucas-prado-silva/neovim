@@ -47,7 +47,8 @@ keymap("n", "<leader>mk", "<Esc>:m +1<CR>", opts)
 keymap("n", "<leader>mj", "<Esc>:m -2<CR>", opts)
 
 -- File tree
-keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle=true position=right<CR>", opts)
+keymap("n", "<leader>gs", ":Neotree position=float source=git_status<CR>", opts)
 
 -- Toggle git blame
 keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)

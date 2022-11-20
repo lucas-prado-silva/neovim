@@ -25,7 +25,6 @@ local icons = require "lucas.icons"
 local kind_icons = icons.kind
 
 -- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
 
@@ -88,11 +87,6 @@ cmp.setup {
             -- Kind icons
             vim_item.kind = kind_icons[vim_item.kind]
 
-            if entry.source.name == "cmp_tabnine" then
-                vim_item.kind = icons.misc.Robot
-                vim_item.kind_hl_group = "CmpItemKindTabnine"
-            end
-
             if entry.source.name == "emoji" then
                 vim_item.kind = icons.misc.Smiley
                 vim_item.kind_hl_group = "CmpItemKindEmoji"
@@ -106,7 +100,6 @@ cmp.setup {
             -- NOTE: order matters
             vim_item.menu = ({
                 nvim_lsp = "",
-                cmp_tabnine = "",
                 luasnip = "",
                 buffer = "",
                 path = "",
@@ -119,7 +112,6 @@ cmp.setup {
     sources = {
         { name = "nvim_lsp", group_index = 1 },
         { name = "luasnip", group_index = 1 },
-        { name = "cmp_tabnine", group_index = 2 },
         { name = "path", group_index = 2 },
         { name = "buffer", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
@@ -129,7 +121,6 @@ cmp.setup {
     sorting = {
         priority_weight = 2,
         comparators = {
-            require('cmp_tabnine.compare'),
             compare.offset,
             compare.exact,
             -- compare.scopes,
