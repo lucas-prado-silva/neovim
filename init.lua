@@ -20,6 +20,7 @@ require("lucas.comment-config")
 require("lucas.telescope-config")
 require("lucas.project-config");
 require("lucas.bufferline-config")
+require("lucas.neo-tree-config")
 require("lucas.treesitter-config")
 require("lucas.lualine-config")
 require("lucas.alpha-config")

@@ -47,7 +47,7 @@ keymap("n", "<leader>mk", "<Esc>:m +1<CR>", opts)
 keymap("n", "<leader>mj", "<Esc>:m -2<CR>", opts)
 
 -- File tree
-keymap("n", "<leader>e", ":Neotree toggle=true position=right<CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle=false position=right<CR>", opts)
 keymap("n", "<leader>gs", ":Neotree position=float source=git_status<CR>", opts)
 
 -- Toggle git blame
@@ -88,6 +88,8 @@ keymap("n", "<leader>aa", ":Alpha<CR>", opts)
 -- Cybu
 keymap("n", "<tab>", ":CybuLastusedPrev<CR>", opts)
 keymap("n", "<s-tab>", ":CybuLastusedNext<CR>", opts)
+
+keymap("n", "<leader>cl", "<cmd>lua require('zippy').insert_print()<CR>", opts)
 
 -- Spectre
 -- keymap("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", opts)
