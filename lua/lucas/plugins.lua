@@ -45,6 +45,24 @@ return packer.startup(function(use)
 	----------------
 	use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
 
+	-- noice
+	use({
+		"folke/noice.nvim",
+  		config = function()
+    		require("noice").setup({
+        -- add any options here
+    		})
+  		end,
+  		requires = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    }
+})
+
 	-------------
 	--- UTILS ---
 	-------------
@@ -159,7 +177,7 @@ return packer.startup(function(use)
 		commit = "5c209e52681db48ca714817a4a907523ee98b377",
 		requires = {
 			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons",
+			"DaikyXendo/nvim-material-icon",
 			"MunifTanjim/nui.nvim",
 		},
 	}
@@ -289,6 +307,11 @@ return packer.startup(function(use)
 	use { "jose-elias-alvarez/typescript.nvim", commit = "4f362c92c1f2f41c9bb13e72106b8719ae3ff379" } -- ts utils TODO check config
 
 	use { 'glepnir/lspsaga.nvim', commit = "777f3c8b7eea9eb57ef4f5f73452e3069360eb5d" } -- LSP UI library
+
+	use {
+		'kosayoda/nvim-lightbulb',
+    	requires = 'antoinemadec/FixCursorHold.nvim',
+	}
 
 	---------
 	-- CMP --

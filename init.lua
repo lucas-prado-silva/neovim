@@ -10,10 +10,11 @@ require("lucas.plugins")
 -- Declare keymaps
 require("lucas.keymaps")
 
--- require("lucas.noice-config")
+require("lucas.noice-config")
 require("lucas.indent-blankline-config")
 require("lucas.colorscheme-config")
 require("lucas.mason-config")
+require("lucas.lightbulb-config")
 require("lucas.lsp-config")
 require("lucas.cmp-config")
 require("lucas.comment-config")
