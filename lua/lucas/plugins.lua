@@ -85,6 +85,26 @@ return packer.startup(function(use)
 	use { "windwp/nvim-spectre", commit = "c553eb47ad9d82f8452119ceb6eb209c930640ec" } -- find and replace TODO improve usage
 
 	use {
+		"cshuaimin/ssr.nvim",
+		module = "ssr",
+		-- Calling setup is optional.
+		config = function()
+			require("ssr").setup {
+				min_width = 50,
+				min_height = 5,
+				keymaps = {
+					close = "q",
+					next_match = "n",
+					prev_match = "N",
+					replace_all = "<leader><cr>",
+				},
+			}
+		end
+	}
+
+	use { 'ThePrimeagen/harpoon', commit = "00f486e9634406bbfc5bc25528685beb530fb3cf" }
+
+	use {
 		"folke/zen-mode.nvim",
 		config = function()
 			require("zen-mode").setup {
@@ -128,14 +148,12 @@ return packer.startup(function(use)
 	--------------
 	--- THEMES ---
 	--------------
-	use { "ellisonleao/gruvbox.nvim" }
+	-- use { "ellisonleao/gruvbox.nvim" }
+	use { "catppuccin/nvim", as = "catppuccin" }	
 
 	--------
 	-- UI --
 	--------
-	use { "kyazdani42/nvim-tree.lua", requires = { 'kyazdani42/nvim-web-devicons' }, -- file tree
-		commit = "4a725c0ca501d81002aad77418f1edafdd01a0ba" } --load the file tree using the web devicons
-
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
 		commit = "5c209e52681db48ca714817a4a907523ee98b377",
@@ -205,7 +223,7 @@ return packer.startup(function(use)
 	-- 	end,
 	-- }
 	--
-	use { 'kevinhwang91/nvim-hlslens' } -- better search highlighting
+	use { 'kevinhwang91/nvim-hlslens', commit="55b9c1e5abefea7f94c011c3eb6816da27925577" } -- better search highlighting
 
 	use("petertriho/nvim-scrollbar") -- shows a scrollbar
 
@@ -250,15 +268,15 @@ return packer.startup(function(use)
 	---------
 	-- LSP --
 	---------
-	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "f3c53d225ada93a99bfd818e1c40012400e2dc55" }
+	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "18cc1216e128b2db1046cf7b3a46851c7c4e4073" }
 
-	use { 'nvim-treesitter/nvim-treesitter-context', commit = "8d0759eb798fee2e1201b26c3279713ac67c44c2" }
+	use { 'nvim-treesitter/nvim-treesitter-context', commit = "5fda0b9a2a9049ecc9900e2d86d9ddebab95b0c5" }
 
-	use { "williamboman/mason.nvim", commit = "924923882bcc027268fdfb77e72df60b058d5e69" } --LSP manager
+	use { "williamboman/mason.nvim", commit = "0c5e610097590dd6f8254ae582c97088797855f9" } --LSP manager
 
-	use { "williamboman/mason-lspconfig.nvim", commit = "74c45b3663aeb4c9065a4b29355d9c1c8a8c00b5" } -- helper for lsp
+	use { "williamboman/mason-lspconfig.nvim", commit = "edf15b98cd7d7ce0f83cf7d3a968145a3f974772" } -- helper for lsp
 
-	use { "neovim/nvim-lspconfig", commit = "636ce36c30725391486377850bf8460dc0723ae2" } -- enable lsp
+	use { "neovim/nvim-lspconfig", commit = "ea5744f9243ec25a178a0bc403a4c8203ecc4f23" } -- enable lsp
 
 	use { "ray-x/lsp_signature.nvim", commit = "e65a63858771db3f086c8d904ff5f80705fd962b" } -- show function signature
 
@@ -285,7 +303,7 @@ return packer.startup(function(use)
 
 	use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
 
-	use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" } -- lsb based cmp
+	use { "hrsh7th/cmp-nvim-lsp", commit = "59224771f91b86d1de12570b4070fe4ad7cd1eeb" } -- lsb based cmp
 
 	use { "hrsh7th/cmp-nvim-lua" } -- cmp for lua
 
