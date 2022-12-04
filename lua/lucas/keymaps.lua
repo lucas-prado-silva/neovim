@@ -23,10 +23,10 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>s", ":w<CR>", opts)
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", "<Cmd>lua require('tmux').move_left()<CR>", opts)
+keymap("n", "<C-j>", "<Cmd>lua require('tmux').move_bottom()<CR>", opts)
+keymap("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>", opts)
+keymap("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>", opts)
 
 -- Resize with arrows
 keymap('n', '<leader>rj', ':resize +3 <CR>', opts)
@@ -77,6 +77,8 @@ keymap("n", "<leader>fld", ":Telescope lsp_definitions<CR>", opts)
 keymap("n", "<leader>fli", ":Telescope lsp_implementations<CR>", opts)
 
 keymap("n", "<leader>fq", ":Telescope planets<CR>", opts)
+
+keymap("n", "<leader>fc", ":Telescope tailiscope<CR>", opts)
 
 -- Diff view
 keymap("n", "<leader>gdo", ":DiffviewOpen<CR>", opts)

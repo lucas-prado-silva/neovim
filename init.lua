@@ -11,6 +11,7 @@ require("lucas.plugins")
 require("lucas.keymaps")
 
 require("lucas.noice-config")
+require("lucas.copilot-config")
 require("lucas.octo-config")
 require("lucas.indent-blankline-config")
 require("lucas.colorscheme-config")

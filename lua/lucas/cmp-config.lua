@@ -20,11 +20,18 @@ local check_backspace = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
 end
 
+local has_words_before = function()
+  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
+end
+
 local icons = require "lucas.icons"
 
 local kind_icons = icons.kind
 
--- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
 
@@ -49,25 +56,28 @@ cmp.setup {
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
         ["<CR>"] = cmp.mapping.confirm { select = true },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.jumpable(1) then
-                luasnip.jump(1)
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif check_backspace() then
-                -- cmp.complete()
-                fallback()
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
+   --      ["<Tab>"] = cmp.mapping(function(fallback)
+			-- if cmp.visible() and has_words_before() then
+			-- 	cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+			-- -- NOTE: replaced by the two lines above for a copilot.lua plugin workaround
+   --          -- if cmp.visible() then
+   --          --     cmp.select_next_item()
+   --          elseif luasnip.jumpable(1) then
+   --              luasnip.jump(1)
+   --          elseif luasnip.expand_or_jumpable() then
+   --              luasnip.expand_or_jump()
+   --          elseif luasnip.expandable() then
+   --              luasnip.expand()
+   --          elseif check_backspace() then
+   --              -- cmp.complete()
+   --              fallback()
+   --          else
+   --              fallback()
+   --          end
+   --      end, {
+   --          "i",
+   --          "s",
+   --      }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -86,6 +96,10 @@ cmp.setup {
         format = function(entry, vim_item)
             -- Kind icons
             vim_item.kind = kind_icons[vim_item.kind]
+			if entry.source.name == "copilot" then
+        		vim_item.kind = icons.git.Octoface
+        		vim_item.kind_hl_group = "CmpItemKindCopilot"
+      		end
 
             if entry.source.name == "emoji" then
                 vim_item.kind = icons.misc.Smiley
@@ -110,8 +124,39 @@ cmp.setup {
         end,
     },
     sources = {
-        { name = "nvim_lsp", group_index = 1 },
-        { name = "luasnip", group_index = 1 },
+		{
+      		name = "copilot",
+      		-- keyword_length = 0,
+      		max_item_count = 3,
+      		trigger_characters = {
+        		{
+          			".",
+          			":",
+          			"(",
+          			"'",
+          			'"',
+          			"[",
+          			",",
+          			"#",
+          			"*",
+          			"@",
+          			"|",
+          			"=",
+          			"-",
+          			"{",
+          			"/",
+          			"\\",
+          			"+",
+          			"?",
+          			" ",
+          			-- "\t",
+          			-- "\n",
+        		},
+    		},
+    		group_index = 2,
+		},
+		{ name = "nvim_lsp", group_index = 2 },
+        { name = "luasnip", group_index = 2 },
         { name = "path", group_index = 2 },
         { name = "buffer", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },

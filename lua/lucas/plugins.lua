@@ -102,6 +102,41 @@ return packer.startup(function(use)
 
 	use { "windwp/nvim-spectre", commit = "c553eb47ad9d82f8452119ceb6eb209c930640ec" } -- find and replace TODO improve usage
 
+	use({
+		"aserowy/tmux.nvim",
+		commit = '1ad660c1c28aa81fd67a56ef60f46121711ed6fb'
+	})
+
+	use("danielvolchek/tailiscope.nvim")
+
+	use("github/copilot.vim")
+
+	-- lua implementation of copilot
+	-- use {
+ --  		"zbirenbaum/copilot.lua",
+ --  		event = "InsertEnter",
+ --  		config = function ()
+ --    		vim.schedule(function()
+ --      			require("copilot").setup()
+ --    		end)
+ --  		end,
+	-- 	}
+ --
+	-- use {
+ --  		"zbirenbaum/copilot-cmp",
+ --  		after = { "copilot.lua" },
+ --  		config = function ()
+ --    		require("copilot_cmp").setup(
+	-- 			{
+	-- 				method = 'getCompletionsCycling',
+	-- 				formatters = {
+	-- 					insert_text = require("copilot_cmp.format").remove_existing
+	-- 				},
+	-- 			}
+	-- 		)
+ --  		end
+	-- }
+
 	use {
 		"cshuaimin/ssr.nvim",
 		module = "ssr",
@@ -223,7 +258,7 @@ return packer.startup(function(use)
 	use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" } -- An implementation of the Popup API
 
 	use { "akinsho/bufferline.nvim", requires = 'kyazdani42/nvim-web-devicons',
-		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" } -- top bar with buffers
+		commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4", after="catpuccin" } -- top bar with buffers
 
 	use { "christianchiarulli/lualine.nvim", commit = "c0510ddec86070dbcacbd291736de27aabbf3bfe" } --status bar at the bottom
 
