@@ -1,10 +1,8 @@
 local telescope_builtin = require("telescope.builtin")
 
-
 -- SECTION:---------------------------------------
 -- SECTION:         BUILTIN PICKERS
 -- SECTION:---------------------------------------
-
 
 --------------------------------------------------
 -- Find files in current dir
