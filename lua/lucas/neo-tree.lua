@@ -1,17 +1,10 @@
 require("neo-tree").setup({
-	close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+	close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
 	popup_border_style = "rounded",
 	enable_git_status = true,
 	enable_diagnostics = true,
 	sort_case_insensitive = false, -- used when sorting files and directories in the tree
 	sort_function = nil, -- use a custom function for sorting files and directories in the tree
-	-- sort_function = function (a,b)
-	--       if a.type == b.type then
-	--           return a.path > b.path
-	--       else
-	--           return a.type > b.type
-	--       end
-	--   end , -- this sorts files and directories descendantly
 	default_component_configs = {
 		container = {
 			enable_character_fade = true
@@ -83,19 +76,12 @@ require("neo-tree").setup({
 			["P"] = { "toggle_preview", config = { use_float = true } },
 			["S"] = "open_split",
 			["s"] = "open_vsplit",
-			-- ["S"] = "split_with_window_picker",
-			-- ["s"] = "vsplit_with_window_picker",
 			["t"] = "open_tabnew",
-			-- ["<cr>"] = "open_drop",
-			-- ["t"] = "open_tab_drop",
 			["w"] = "open_with_window_picker",
-			--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
 			["C"] = "close_node",
 			["z"] = "close_all_nodes",
-			--["Z"] = "expand_all_nodes",
 			["a"] = {
 				"add",
-				-- some commands may take optional config options, see `:h neo-tree-mappings` for details
 				config = {
 					show_path = "none" -- "none", "relative", "absolute"
 				}
