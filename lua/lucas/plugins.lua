@@ -2,15 +2,18 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	--------------------------
-	--    Package Manager
-	--------------------------
-	-- Packer can manage itself
+	-- SECTION:---------------------------------------
+	-- SECTION:         PACKAGE MANAGER
+	-- SECTION:---------------------------------------
+
+	---------------------------------------------------------------------------------------------
+	-- Packer (it can manage itself, what a strong independent package manager)
+	---------------------------------------------------------------------------------------------
 	use 'wbthomason/packer.nvim'
 
-	--------------------------
-	--    Dashboard
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Initial Dashboard
+	-- SECTION:---------------------------------------
 	use {
 		'goolord/alpha-nvim',
 		config = function()
@@ -18,14 +21,29 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	--------------------------
-	--    Treesitter
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         AI related plugins
+	-- SECTION:---------------------------------------
+
+	use({
+		"jackMort/ChatGPT.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim"
+		}
+	})
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         Treesitter
+	-- SECTION:---------------------------------------
+
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-	--------------------------
-	--    LSP
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         LSP
+	-- SECTION:---------------------------------------
+
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
@@ -48,9 +66,26 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	--------------------------
-	--   File explorer
-	--------------------------
+	use {
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	}
+
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+	})
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         Terminal Support
+	-- SECTION:---------------------------------------
+
+	use { "akinsho/toggleterm.nvim", tag = '*' }
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         File Explorer
+	-- SECTION:---------------------------------------
+
 	use {
 		'nvim-tree/nvim-tree.lua',
 		requires = {
@@ -58,9 +93,10 @@ return require('packer').startup(function(use)
 		},
 	}
 
-	--------------------------
-	--   Comments
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Comments
+	-- SECTION:---------------------------------------
+
 	use {
 		'numToStr/Comment.nvim',
 		config = function()
@@ -73,64 +109,68 @@ return require('packer').startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	}
 
-	--------------------------
-	--   Which Key
-	-------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Which Key
+	-- SECTION:---------------------------------------
+
 	use {
 		"folke/which-key.nvim",
 	}
 
-	--------------------------
-	--    Telescope
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Telescope
+	-- SECTION:---------------------------------------
+
 	use {
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.0',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
-	--------------------------
-	--    Project Management
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Project Management
+	-- SECTION:---------------------------------------
+
 	use {
 		"ahmedkhalf/project.nvim",
 	}
 
-	--------------------------
-	--    Colorschemes
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Themes
+	-- SECTION:---------------------------------------
+
 	use { "ellisonleao/gruvbox.nvim" }
 
-	--------------------------
-	--    Buffers
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Buffers
+	-- SECTION:---------------------------------------
+
 	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 	use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" } -- closes buffers more intelligently
 
-	--------------------------
-	--    Git
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Git
+	-- SECTION:---------------------------------------
+
 	use { 'tpope/vim-fugitive' }
 	use {
 		'lewis6991/gitsigns.nvim',
 		tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
 	}
 
-	--------------------------
-	--    Marks
-	--------------------------
+	-- SECTION:---------------------------------------
+	-- SECTION:         Marks
+	-- SECTION:---------------------------------------
+
 	use 'ThePrimeagen/harpoon'
 
-	--------------------------
-	--    Undo
-	--------------------------
-	use { 'mbbill/undotree' }
+	-- SECTION:---------------------------------------
+	-- SECTION:         Utils
+	-- SECTION:---------------------------------------
 
-	--------------------------
-	--    Utilitaries
-	--------------------------
 	use 'nvim-lua/plenary.nvim'
 	use { "windwp/nvim-autopairs" }
+	use { 'mbbill/undotree' }
 
 
 end)

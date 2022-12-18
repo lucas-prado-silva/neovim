@@ -64,7 +64,6 @@ vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>")
 -- SECTION:         LSP PICKERS
 -- SECTION:---------------------------------------
 
-
 --------------------------------------------------
 -- Find LSP references
 --------------------------------------------------
@@ -99,7 +98,6 @@ vim.keymap.set("n", "<leader>fqf", telescope_builtin.quickfix, {})
 -- SECTION:---------------------------------------
 -- SECTION:         GIT PICKERS
 -- SECTION:---------------------------------------
-
 
 --------------------------------------------------
 -- Find git commits

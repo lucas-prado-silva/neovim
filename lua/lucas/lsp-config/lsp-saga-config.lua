@@ -6,6 +6,5 @@ saga.init_lsp_saga {
     server_filetype_map = {
         typescript = 'typescript'
     },
-	custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
 }
 
