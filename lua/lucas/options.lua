@@ -17,7 +17,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 
 -- Searching
-vim.opt.hlsearch = false                         -- highlight all matches on previous search pattern
+vim.opt.hlsearch = true                         -- highlight all matches on previous search pattern
 vim.opt.incsearch = true                         -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true                      	 -- ignore case in search patterns
 
@@ -77,3 +77,11 @@ vim.cmd [[set iskeyword+=-]]
 -- no idea what this does
 vim.cmd [[set formatoptions-=cro]]
 vim.opt.shortmess:append "c"
+
+
+
+vim.cmd [[hi default link HlSearchNear IncSearch]]
+vim.cmd [[hi default link HlSearchLensNear IncSearch]]
+vim.cmd [[hi default link HlSearchLens WildMenu]]
+vim.cmd [[hi default link HlSearchFloat IncSearch]]
+

@@ -146,6 +146,11 @@ _G.packer_plugins = {
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -180,6 +185,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-hlslens"] = {
+    loaded = true,
+    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
+    url = "https://github.com/kevinhwang91/nvim-hlslens"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -255,6 +265,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
+  },
+  ["zippy.nvim"] = {
+    loaded = true,
+    path = "/Users/silval4/.local/share/nvim/site/pack/packer/start/zippy.nvim",
+    url = "https://github.com/PatschD/zippy.nvim"
   }
 }
 

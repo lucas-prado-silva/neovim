@@ -41,6 +41,12 @@ return require('packer').startup(function(use)
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
 	-- SECTION:---------------------------------------
+	-- SECTION:         Highlighting
+	-- SECTION:---------------------------------------
+
+	use "RRethy/vim-illuminate"
+
+	-- SECTION:---------------------------------------
 	-- SECTION:         LSP
 	-- SECTION:---------------------------------------
 
@@ -75,6 +81,24 @@ return require('packer').startup(function(use)
 		"glepnir/lspsaga.nvim",
 		branch = "main",
 	})
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         Movement
+	-- SECTION:---------------------------------------
+
+	use "ggandor/leap.nvim"
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         Logging
+	-- SECTION:---------------------------------------
+
+	use 'PatschD/zippy.nvim'
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         Search
+	-- SECTION:---------------------------------------
+
+	use {'kevinhwang91/nvim-hlslens'}
 
 	-- SECTION:---------------------------------------
 	-- SECTION:         Terminal Support
