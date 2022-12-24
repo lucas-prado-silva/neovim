@@ -55,6 +55,8 @@ vim.opt.wrap = false                            -- display lines as one long lin
 vim.opt.expandtab = false                       -- convert tabs to spaces
 vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
+vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 
 -- Splits
 vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
@@ -63,8 +65,6 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 -- Performance
 vim.opt.timeoutlen = 500                       -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.updatetime = 50                         -- faster completion (4000ms default)
-vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 
 -- Line numbers
 vim.opt.number = true                           -- set numbered lines
@@ -77,8 +77,6 @@ vim.cmd [[set iskeyword+=-]]
 -- no idea what this does
 vim.cmd [[set formatoptions-=cro]]
 vim.opt.shortmess:append "c"
-
-
 
 vim.cmd [[hi default link HlSearchNear IncSearch]]
 vim.cmd [[hi default link HlSearchLensNear IncSearch]]

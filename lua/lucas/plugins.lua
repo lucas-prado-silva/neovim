@@ -34,6 +34,17 @@ return require('packer').startup(function(use)
 		}
 	})
 
+	use "aduros/ai.vim"
+
+	-- SECTION:---------------------------------------
+	-- SECTION:         Github
+	-- SECTION:---------------------------------------
+
+	use {
+		'ldelossa/gh.nvim',
+		requires = { { 'ldelossa/litee.nvim' } }
+	}
+
 	-- SECTION:---------------------------------------
 	-- SECTION:         Treesitter
 	-- SECTION:---------------------------------------
@@ -82,6 +93,10 @@ return require('packer').startup(function(use)
 		branch = "main",
 	})
 
+	use({
+		"dnlhc/glance.nvim",
+	})
+
 	-- SECTION:---------------------------------------
 	-- SECTION:         Movement
 	-- SECTION:---------------------------------------
@@ -98,7 +113,7 @@ return require('packer').startup(function(use)
 	-- SECTION:         Search
 	-- SECTION:---------------------------------------
 
-	use {'kevinhwang91/nvim-hlslens'}
+	use { 'kevinhwang91/nvim-hlslens' }
 
 	-- SECTION:---------------------------------------
 	-- SECTION:         Terminal Support
@@ -166,6 +181,12 @@ return require('packer').startup(function(use)
 	use { "ellisonleao/gruvbox.nvim" }
 
 	-- SECTION:---------------------------------------
+	-- SECTION:         UI
+	-- SECTION:---------------------------------------
+
+	use("petertriho/nvim-scrollbar")
+
+	-- SECTION:---------------------------------------
 	-- SECTION:         Buffers
 	-- SECTION:---------------------------------------
 
@@ -181,6 +202,7 @@ return require('packer').startup(function(use)
 		'lewis6991/gitsigns.nvim',
 		tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
 	}
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 	-- SECTION:---------------------------------------
 	-- SECTION:         Marks
@@ -194,6 +216,7 @@ return require('packer').startup(function(use)
 
 	use 'nvim-lua/plenary.nvim'
 	use { "windwp/nvim-autopairs" }
+	use { "windwp/nvim-ts-autotag" }
 	use { 'mbbill/undotree' }
 
 

@@ -45,3 +45,7 @@ require("trouble").setup {
 	},
 	use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
+
+vim.api.nvim_set_keymap("n", "<leader>lD", "<cmd>Trouble workspace_diagnostics<cr>",
+	{ silent = true, noremap = true }
+)

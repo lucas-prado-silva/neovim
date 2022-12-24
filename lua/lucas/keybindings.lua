@@ -19,13 +19,13 @@ vim.keymap.set("i", "jk", "<ESC>")
 
 
 -- SECTION:---------------------------------------
--- SECTION:         FILE EXPLORERS
+-- SECTION:         AI
 -- SECTION:---------------------------------------
 
 --------------------------------------------------
 -- Open ChatGPT
 --------------------------------------------------
-vim.keymap.set("n", "<leader>cc", ":ChatGPT<CR>")
+vim.keymap.set("n", "<leader>ac", ":ChatGPT<CR>")
 
 -- SECTION:---------------------------------------
 -- SECTION:         FILE EXPLORERS
@@ -125,7 +125,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --------------------------------------------------
 -- Replace all instances of current word
 --------------------------------------------------
-vim.keymap.set("n", "<leader>rr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>lw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 
 -- SECTION:---------------------------------------
@@ -150,13 +150,13 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
--- vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",
--- { silent = true, noremap = true }
--- )
+vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>",
+{ silent = true, noremap = true }
+)
