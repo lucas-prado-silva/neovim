@@ -47,7 +47,7 @@ wk.register({
 		c = {
 			name = "colorschemes",
 		},
-		z = {
+		o = {
 			name = "resume latest search",
 		},
 		v = {

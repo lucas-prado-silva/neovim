@@ -37,6 +37,12 @@ return require('packer').startup(function(use)
 	use "aduros/ai.vim"
 
 	-- SECTION:---------------------------------------
+	-- SECTION:         Hydra
+	-- SECTION:---------------------------------------
+
+	use 'anuvyklack/hydra.nvim'
+
+	-- SECTION:---------------------------------------
 	-- SECTION:         Github
 	-- SECTION:---------------------------------------
 
@@ -197,6 +203,7 @@ return require('packer').startup(function(use)
 	-- SECTION:         Git
 	-- SECTION:---------------------------------------
 
+	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 	use { 'tpope/vim-fugitive' }
 	use {
 		'lewis6991/gitsigns.nvim',
@@ -209,6 +216,7 @@ return require('packer').startup(function(use)
 	-- SECTION:---------------------------------------
 
 	use 'ThePrimeagen/harpoon'
+	use 'chentoast/marks.nvim'
 
 	-- SECTION:---------------------------------------
 	-- SECTION:         Utils

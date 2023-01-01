@@ -49,10 +49,10 @@ vim.keymap.set("n", "<leader>fvh", telescope_builtin.highlights, opts)
 --------------------------------------------------
 -- Resume latest search
 --------------------------------------------------
-vim.keymap.set("n", "<leader>fz", telescope_builtin.resume, opts)
+vim.keymap.set("n", "<leader>fo", telescope_builtin.resume, opts)
 
 --------------------------------------------------
--- Fuzzy find inside current buffer NOT WORKING
+-- TODO: Not working Fuzzy find inside current buffer
 --------------------------------------------------
 vim.keymap.set("n", "<leader>fbt", telescope_builtin.current_buffer_fuzzy_find, opts)
 
