@@ -25,6 +25,10 @@ require("lazy").setup({
 	spec = {
 		-- import LazyVim plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		{ import = "lazyvim.plugins.extras.formatting.prettier" },
+		{ import = "lazyvim.plugins.extras.lang.json" },
+		{ import = "lazyvim.plugins.extras.lang.typescript" },
+		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		-- import/override with your plugins
 		{ import = "plugins" },
 	},
@@ -55,20 +59,13 @@ require("lazy").setup({
 -- Declare plugin configs
 --------------------------------------------------
 -- require("lucas.autopairs")
--- require("lucas.bufferline")
 -- require("lucas.chat-gpt")
--- require("lucas.colorscheme")
 -- require("lucas.chat-gpt")
--- require("lucas.dashboard")
 -- require("lucas.diffview")
--- require("lucas.git-signs")
 -- require("lucas.github")
 -- require("lucas.glance")
 -- require("lucas.harpoon")
--- require("lucas.hlslens")
 -- require("lucas.hydras")
--- require("lucas.illuminate")
--- require("lucas.leap")
 -- require("lucas.lsp")
 -- require("lucas.marks")
 -- require("lucas.neogit")
@@ -76,9 +73,7 @@ require("lazy").setup({
 -- require("lucas.project")
 -- require("lucas.scrollbar")
 -- require("lucas.telescope")
--- require("lucas.todo-comments")
 -- require("lucas.toggleterm")
--- require("lucas.treesitter")
 -- require("lucas.trouble")
 -- require("lucas.undotree")
 -- require("lucas.vim-fugitive")
