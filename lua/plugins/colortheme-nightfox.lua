@@ -1,7 +1,7 @@
 return {
 	{
 		"EdenEast/nightfox.nvim",
-		enabled = false,
+		enabled = true,
 		pin = true,
 		event = "VimEnter",
 		config = function()

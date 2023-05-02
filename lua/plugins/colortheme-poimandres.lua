@@ -1,7 +1,7 @@
 return {
 	{
 		"olivercederborg/poimandres.nvim",
-		enabled = true,
+		enabled = false,
 		pin = true,
 		event = "VimEnter",
 		config = function()
