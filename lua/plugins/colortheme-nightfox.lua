@@ -37,9 +37,9 @@ return {
 						variables = "NONE",
 					},
 					inverse = { -- Inverse highlight for different types
-						match_paren = false,
-						visual = false,
-						search = false,
+						match_paren = true,
+						visual = true,
+						search = true,
 					},
 					modules = { -- List of various plugins and additional options
 						-- ...
@@ -51,7 +51,7 @@ return {
 			})
 
 			-- setup must be called before loading
-			vim.cmd("colorscheme nightfox")
+			vim.cmd("colorscheme carbonfox")
 		end,
 	},
 }
