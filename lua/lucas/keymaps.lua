@@ -12,11 +12,11 @@ keymap("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>", opts)
 keymap("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>", opts)
 
 -- Resize with arrows
-keymap('n', '<leader>rj', ':resize +3 <CR>', opts)
-keymap('n', '<leader>rk', ':resize -3 <CR>', opts)
+keymap("n", "<leader>rj", ":resize +3 <CR>", opts)
+keymap("n", "<leader>rk", ":resize -3 <CR>", opts)
 -- resize right and left
-keymap('n', '<leader>rl', ':vertical resize +3 <CR>', opts)
-keymap('n', '<leader>rh', ':vertical resize -3 <CR>', opts)
+keymap("n", "<leader>rl", ":vertical resize +3 <CR>", opts)
+keymap("n", "<leader>rh", ":vertical resize -3 <CR>", opts)
 
 -- Toggle git blame
 keymap("n", "<leader>gb", ":GitBlameToggle<CR>", opts)
@@ -47,5 +47,4 @@ keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
 keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
 keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 keymap("n", "<leader>n", ":noh<CR>", opts)
-
-
+-- keymap("n", "<leader>z", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

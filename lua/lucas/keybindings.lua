@@ -118,7 +118,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --------------------------------------------------
 -- Replace all instances of current word
 --------------------------------------------------
-vim.keymap.set("n", "<leader>lw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set({ "n", "v" }, "<leader>lw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- SECTION:---------------------------------------
 -- SECTION:         UTILS
@@ -149,3 +149,10 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 vim.api.nvim_set_keymap("n", "<leader>dw", "<cmd>Trouble workspace_diagnostics<cr>", { silent = true, noremap = true })
+
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<leader>s",
+-- 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+-- 	{ silent = true, noremap = true }
+-- )
