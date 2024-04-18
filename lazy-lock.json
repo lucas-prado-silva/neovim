@@ -5,6 +5,7 @@
   "bufferline.nvim": { "branch": "main", "commit": "d24378edc14a675c820a303b4512af3bbc5761e9" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "flash.nvim": { "branch": "main", "commit": "8a8e74922a383c253b7f92e042b749150140c8d1" },
+  "headlines.nvim": { "branch": "master", "commit": "618ef1b2502c565c82254ef7d5b04402194d9ce3" },
   "lazy.nvim": { "branch": "main", "commit": "7ca3bdb566c3ba4492f2d22b37c2c9e26f09470f" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "d22fef7b87a0b61ce5a3414c017e243cd84d7a6f" },
   "lspsaga.nvim": { "branch": "main", "commit": "798c1b650d541bb14492fb54d533673162fb848f" },
