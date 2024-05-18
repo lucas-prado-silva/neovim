@@ -14,7 +14,7 @@ vim.keymap.set("i", "jk", "<ESC>")
 
 -- Format file using nvim LSP
 vim.keymap.set("n", "<leader>lf", function()
-	vim.lsp.buf.format()
+    vim.lsp.buf.format()
 end)
 
 -- Paste to the void register
@@ -40,3 +40,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 
+vim.keymap.set("n", "<S-l>", ":bnext<CR>")
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
+vim.keymap.set("n", "<S-w>", ":Bdelete<CR>")
