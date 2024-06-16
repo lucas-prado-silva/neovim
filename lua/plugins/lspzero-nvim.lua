@@ -18,7 +18,7 @@ return {
 	config = function()
 		local lsp = require('lsp-zero').preset({})
 
-		lsp.ensure_installed({'eslint', 'rust_analyzer', 'tsserver', 'graphql', 'go' })
+		lsp.ensure_installed({'eslint', 'rust_analyzer', 'tsserver', 'graphql' })
 
 		lsp.on_attach(function(client, bufnr)
 			-- see :help lsp-zero-keybindings

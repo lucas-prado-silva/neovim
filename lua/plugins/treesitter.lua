@@ -6,7 +6,7 @@ return {
 	cmd = { "TSUpdateSync" },
 	dependencies = {},
 	opts = {
-		highlight = { enable = false },
+		highlight = { enable = true },
 		indent = { enable = true },
 		ensure_installed = {
 			"astro",

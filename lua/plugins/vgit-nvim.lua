@@ -1,7 +1,8 @@
 return {
     'tanvirtin/vgit.nvim',
+    enabled = false,
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function () 
+    config = function ()
         require('vgit').setup({
             keymaps = {
                 ['n <C-k>'] = function() require('vgit').hunk_up() end,

@@ -1,6 +1,7 @@
 return {
     "lukas-reineke/headlines.nvim",
     dependencies = "nvim-treesitter/nvim-treesitter",
+    enabled = false,
     config = function()
         require("headlines").setup {
             markdown = {
@@ -26,7 +27,14 @@ return {
                 (block_quote (block_continuation) @quote)
             ]]
                 ),
-                headline_highlights = { "Headline" },
+                headline_highlights = {
+                    "Headline1",
+                    "Headline2",
+                    "Headline3",
+                    "Headline4",
+                    "Headline5",
+                    "Headline6",
+                },
                 bullet_highlights = {
                     "@text.title.1.marker.markdown",
                     "@text.title.2.marker.markdown",
