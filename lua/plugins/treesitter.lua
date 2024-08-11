@@ -1,6 +1,5 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	version = false, -- last release is way too old and doesn't work on Windows
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	cmd = { "TSUpdateSync" },
@@ -19,6 +18,7 @@ return {
 			"luap",
 			"markdown",
             "go",
+            "html",
 			"markdown_inline",
 			"python",
             "graphql",
@@ -44,7 +44,7 @@ return {
 	config = function(_, opts)
 		require'nvim-treesitter.configs'.setup {
 			-- A list of parser names, or "all" (the five listed parsers should always be installed)
-			ensure_installed = { "astro", "typescript", "lua", "vim", "vimdoc", "javascript", "graphql", "go", "markdown" },
+			ensure_installed = { "astro", "html", "typescript", "lua", "vim", "vimdoc", "javascript", "graphql", "go", "markdown" },
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
