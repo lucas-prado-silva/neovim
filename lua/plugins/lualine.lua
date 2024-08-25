@@ -1,3 +1,31 @@
+local colors = {
+    blue   = '#80a0ff',
+    cyan   = '#79dac8',
+    black  = '#080808',
+    white  = '#c6c6c6',
+    red    = '#ff5189',
+    violet = '#d183e8',
+    grey   = '#303030',
+}
+
+local bubbles_theme = {
+    normal = {
+        a = { fg = colors.black, bg = colors.white },
+        b = { fg = colors.white, bg = colors.grey },
+        c = { fg = colors.white },
+    },
+
+    insert = { a = { fg = colors.black, bg = colors.blue } },
+    visual = { a = { fg = colors.black, bg = colors.cyan } },
+    replace = { a = { fg = colors.black, bg = colors.red } },
+
+    inactive = {
+        a = { fg = colors.white, bg = colors.black },
+        b = { fg = colors.white, bg = colors.black },
+        c = { fg = colors.white },
+    },
+}
+
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -7,18 +35,16 @@ return {
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = 'nord',
-                -- component_separators = { left = '', right = ''},
+                theme = bubbles_theme,
                 component_separators = '',
-                -- section_separators = { left = '', right = ''},
-                section_separators = '',
+                section_separators = { left = '', right = '' },
                 disabled_filetypes = {
                     statusline = {},
                     winbar = {},
                 },
                 ignore_focus = {},
                 always_divide_middle = true,
-                globalstatus = false,
+                globalstatus = true,
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
@@ -26,40 +52,27 @@ return {
                 }
             },
             sections = {
-                lualine_a = { 'mode' },
-                lualine_b = { 'branch' },
-                lualine_c = {
+                lualine_a = { { 'mode', separator = { left = '', right = '' }, right_padding = 2, left_padding = 2 } },
+                lualine_b = {
                     {
-                        'filename',
-                        file_status = false, -- Displays file status (readonly status, modified status)
-                        newfile_status = false, -- Display new file status (new file means no write after created)
-                        path = 1, -- 0: Just the filename
-                        -- 1: Relative path
-                        -- 2: Absolute path
-                        -- 3: Absolute path, with tilde as the home directory
-                        -- 4: Filename and parent dir, with tilde as the home directory
-
-                        shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-                        -- for other components. (terrible name, any suggestions?)
+                        'buffers',
+                        icons_enabled = false,
                         symbols = {
-                            modified = '[+]', -- Text to show when the file is modified.
-                            readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
-                            unnamed = '[No Name]', -- Text to show for unnamed buffers.
-                            newfile = '[New]', -- Text to show for newly created file before first write
-                        }
+                            modified = ' ●', -- Text to show when the buffer is modified
+                            alternate_file = '', -- Text to show to identify the alternate file
+                            directory = '', -- Text to show when the buffer is a directory
+                        },
                     }
                 },
-                lualine_x = { 'filetype' },
-                lualine_y = { 'progress' },
-                lualine_z = { 'location' }
+                lualine_c = {},
             },
             inactive_sections = {
-                lualine_a = {},
+                lualine_a = { 'filename' },
                 lualine_b = {},
                 lualine_c = {},
                 lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
+                lualine_y = { 'encoding', 'fileformat', 'filetype' },
+                lualine_z = { 'location', 'encoding' }
             },
             tabline = {},
             winbar = {},
