@@ -1,29 +1,47 @@
-local colors = {
-    blue   = '#80a0ff',
-    cyan   = '#79dac8',
-    black  = '#080808',
-    white  = '#c6c6c6',
-    red    = '#ff5189',
-    violet = '#d183e8',
-    grey   = '#303030',
+local gruvbox_colors = {
+  black        = '#282828',
+  white        = '#ebdbb2',
+  red          = '#fb4934',
+  green        = '#b8bb26',
+  blue         = '#83a598',
+  yellow       = '#fe8019',
+  gray         = '#a89984',
+  darkgray     = '#3c3836',
+  lightgray    = '#504945',
+  inactivegray = '#7c6f64',
 }
 
-local bubbles_theme = {
-    normal = {
-        a = { fg = colors.black, bg = colors.white },
-        b = { fg = colors.white, bg = colors.grey },
-        c = { fg = colors.white },
-    },
-
-    insert = { a = { fg = colors.black, bg = colors.blue } },
-    visual = { a = { fg = colors.black, bg = colors.cyan } },
-    replace = { a = { fg = colors.black, bg = colors.red } },
-
-    inactive = {
-        a = { fg = colors.white, bg = colors.black },
-        b = { fg = colors.white, bg = colors.black },
-        c = { fg = colors.white },
-    },
+local gruvbox_theme = {
+  normal = {
+    a = { bg = gruvbox_colors.white, fg = gruvbox_colors.black, gui = 'bold' },
+    b = { bg = gruvbox_colors.lightgray, fg = gruvbox_colors.white },
+    c = { bg = 'None', fg = gruvbox_colors.gray },
+  },
+  insert = {
+    a = { bg = gruvbox_colors.blue, fg = gruvbox_colors.black, gui = 'bold' },
+    b = { bg = gruvbox_colors.lightgray, fg = gruvbox_colors.white },
+    c = { bg = 'None', fg = gruvbox_colors.white },
+  },
+  visual = {
+    a = { bg = gruvbox_colors.yellow, fg = gruvbox_colors.black, gui = 'bold' },
+    b = { bg = gruvbox_colors.lightgray, fg = gruvbox_colors.white },
+    c = { bg = 'None', fg = gruvbox_colors.black },
+  },
+  replace = {
+    a = { bg = gruvbox_colors.red, fg = gruvbox_colors.black, gui = 'bold' },
+    b = { bg = gruvbox_colors.lightgray, fg = gruvbox_colors.white },
+    c = { bg = 'None', fg = gruvbox_colors.white },
+  },
+  command = {
+    a = { bg = gruvbox_colors.green, fg = gruvbox_colors.black, gui = 'bold' },
+    b = { bg = gruvbox_colors.lightgray, fg = gruvbox_colors.white },
+    c = { bg = 'None', fg = gruvbox_colors.black },
+  },
+  inactive = {
+    a = { bg = gruvbox_colors.darkgray, fg = gruvbox_colors.gray, gui = 'bold' },
+    b = { bg = gruvbox_colors.darkgray, fg = gruvbox_colors.gray },
+    c = { bg = 'None', fg = gruvbox_colors.gray },
+  },
 }
 
 return {
@@ -35,7 +53,7 @@ return {
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = bubbles_theme,
+                theme = gruvbox_theme,
                 component_separators = '',
                 section_separators = { left = '', right = '' },
                 disabled_filetypes = {
