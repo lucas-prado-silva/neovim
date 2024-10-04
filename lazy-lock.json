@@ -6,6 +6,7 @@
   "bufferline.nvim": { "branch": "main", "commit": "2e3c8cc5a57ddd32f1edd2ffd2ccb10c09421f6c" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
   "copilot.vim": { "branch": "release", "commit": "88d08cf54f623341adde4b18362bffc95174dcd5" },
+  "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "flash.nvim": { "branch": "main", "commit": "34c7be146a91fec3555c33fe89c7d643f6ef5cf1" },
   "fzf": { "branch": "master", "commit": "855f90727af7827d9934b7fa00ea5ed51f5e4e81" },
   "fzf-lua": { "branch": "main", "commit": "a34542d466b46be19198d16199e5245d27e89a9e" },
