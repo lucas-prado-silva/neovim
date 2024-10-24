@@ -54,7 +54,7 @@
 --                 light = "mocha",
 --                 dark = "mocha",
 --             },
---             transparent_background = false, -- disables setting the background color.
+--             transparent_background = true, -- disables setting the background color.
 --             show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
 --             term_colors = false,    -- sets terminal colors (e.g. `g:terminal_color_0`)
 --             dim_inactive = {
@@ -121,35 +121,150 @@
 --     end
 -- }
 
+-- return {
+--     "ellisonleao/gruvbox.nvim",
+--     priority = 1000,
+--     -- opts = ...
+--     config = function()
+--         require("gruvbox").setup({
+--             terminal_colors = true, -- add neovim terminal colors
+--             undercurl = false,
+--             underline = false,
+--             bold = false,
+--             italic = {
+--                 strings = false,
+--                 emphasis = false,
+--                 comments = true,
+--                 operators = false,
+--                 folds = false,
+--             },
+--             strikethrough = false,
+--             invert_selection = false,
+--             invert_signs = false,
+--             invert_tabline = false,
+--             invert_intend_guides = false,
+--             inverse = true, -- invert background for search, diffs, statuslines and errors
+--             contrast = "soft", -- can be "hard", "soft" or empty string
+--             palette_overrides = {},
+--             overrides = {},
+--             dim_inactive = false,
+--             transparent_mode = true,
+--         })
+--         vim.cmd("colorscheme gruvbox")
+--     end
+-- }
+
+-- return {
+--     'olivercederborg/poimandres.nvim',
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require('poimandres').setup {
+--             bold_vert_split = false, -- use bold vertical separators
+--             dim_nc_background = false, -- dim 'non-current' window backgrounds
+--             disable_background = true, -- disable background
+--             disable_float_background = true, -- disable background for floats
+--             disable_italics = true, -- disable italics
+--         }
+--     end,
+--
+--     -- optionally set the colorscheme within lazy config
+--     init = function()
+--         vim.cmd("colorscheme poimandres")
+--     end
+-- }
+
+-- return {
+--     'jesseleite/nvim-noirbuddy',
+--     dependencies = {
+--         { 'tjdevries/colorbuddy.nvim' }
+--     },
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require('noirbuddy').setup {
+--             colors = {
+--                 primary = '#0B81EF',
+--                 secondary = '#0bd8ef',
+--                 background = '#000000',
+--                 noir_0 = '#ffffff', -- `noir_0` is light for dark themes, and dark for light themes
+--                 noir_1 = '#f5f5f5',
+--                 noir_2 = '#d5d5d5',
+--                 noir_3 = '#b4b4b4',
+--                 noir_4 = '#a7a7a7',
+--                 noir_5 = '#949494',
+--                 noir_6 = '#757575',
+--                 noir_7 = '#757575',
+--                 noir_8 = '#757575',
+--                 noir_9 = '#000000', -- `noir_9` is dark for dark themes, and light for light themes
+--             },
+--             styles = {
+--                 italic = false,
+--                 bold = false,
+--                 underline = false,
+--                 undercurl = false,
+--             },
+--         }
+--         -- vim.cmd("colorscheme noirbuddy")
+--     end
+-- }
+
 return {
-    "ellisonleao/gruvbox.nvim",
+    'aliqyan-21/darkvoid.nvim',
     priority = 1000,
-    -- opts = ...
     config = function()
-        require("gruvbox").setup({
-            terminal_colors = true, -- add neovim terminal colors
-            undercurl = false,
-            underline = false,
-            bold = false,
-            italic = {
-                strings = false,
-                emphasis = false,
-                comments = true,
-                operators = false,
-                folds = false,
-            },
-            strikethrough = false,
-            invert_selection = false,
-            invert_signs = false,
-            invert_tabline = false,
-            invert_intend_guides = false,
-            inverse = true, -- invert background for search, diffs, statuslines and errors
-            contrast = "hard", -- can be "hard", "soft" or empty string
-            palette_overrides = {},
-            overrides = {},
-            dim_inactive = false,
-            transparent_mode = true,
-        })
-        vim.cmd("colorscheme gruvbox")
+        require('darkvoid').setup {
+            transparent = true,         -- set true for transparent
+            glow = true,                -- set true for glow effect
+            show_end_of_buffer = false, -- set false for not showing end of buffer
+
+            colors = {
+                fg = "#c0c0c0",
+                bg = "#1c1c1c",
+                cursor = "#bdfe58",
+                line_nr = "#404040",
+                visual = "#303030",
+                comment = "#585858",
+                string = "#d1d1d1",
+                func = "#e1e1e1",
+                kw = "#f1f1f1",
+                identifier = "#b1b1b1",
+                type = "#a1a1a1",
+                search_highlight = "#1bfd9c",
+                operator = "#1bfd9c",
+                bracket = "#e6e6e6",
+                preprocessor = "#4b8902",
+                bool = "#66b2b2",
+                constant = "#b2d8d8",
+
+                -- gitsigns colors
+                added = "#baffc9",
+                changed = "#ffffba",
+                removed = "#ffb3ba",
+
+                -- Pmenu colors
+                pmenu_bg = "#1c1c1c",
+                pmenu_sel_bg = "#1bfd9c",
+                pmenu_fg = "#c0c0c0",
+
+                -- EndOfBuffer color
+                eob = "#3c3c3c",
+
+                -- Telescope specific colors
+                border = "#585858",
+                title = "#bdfe58",
+
+                -- bufferline specific colors
+                -- change this to change the colors of current or selected tab
+                bufferline_selection = "#bdfe58",
+
+                -- LSP diagnostics colors
+                error = "#dea6a0",
+                warning = "#D0B8A8",
+                hint = "#BEDC74",
+                info = "#7FA1C3",
+            }
+        }
+        vim.cmd("colorscheme darkvoid")
     end
 }
