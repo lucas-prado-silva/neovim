@@ -6,6 +6,7 @@ return {
         vim.cmd [[
             let g:copilot_filetypes = {
                 \ 'markdown': v:false,
+                \ 'rust': v:false,
                 \ }
         ]]
     end
