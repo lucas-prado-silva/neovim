@@ -43,63 +43,63 @@
 --
 -- }
 
--- return {
---     "catppuccin/nvim",
---     name = "catppuccin",
---     priority = 1000,
---     config = function()
---         require("catppuccin").setup({
---             flavour = "mocha", -- latte, frappe, macchiato, mocha
---             background = { -- :h background
---                 light = "mocha",
---                 dark = "mocha",
---             },
---             transparent_background = true, -- disables setting the background color.
---             show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
---             term_colors = false,    -- sets terminal colors (e.g. `g:terminal_color_0`)
---             dim_inactive = {
---                 enabled = false,    -- dims the background color of inactive window
---                 shade = "dark",
---                 percentage = 0.15,  -- percentage of the shade to apply to the inactive window
---             },
---             no_italic = false,      -- Force no italic
---             no_bold = false,        -- Force no bold
---             styles = {              -- Handles the styles of general hi groups (see `:h highlight-args`):
---                 comments = { "italic" }, -- Change the style of comments
---                 conditionals = { "italic" },
---                 loops = {},
---                 functions = {},
---                 keywords = {},
---                 strings = {},
---                 variables = {},
---                 numbers = {},
---                 booleans = {},
---                 properties = {},
---                 types = {},
---                 operators = {},
---                 -- miscs = {}, -- Uncomment to turn off hard-coded styles
---             },
---             color_overrides = {},
---             custom_highlights = {},
---             default_integrations = true,
---             integrations = {
---                 cmp = true,
---                 gitsigns = true,
---                 nvimtree = true,
---                 treesitter = true,
---                 notify = false,
---                 mini = {
---                     enabled = true,
---                     indentscope_color = "",
---                 },
---                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
---             },
---         })
---
---         -- setup must be called before loading
---         vim.cmd.colorscheme "catppuccin"
---     end
--- }
+return {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+        require("catppuccin").setup({
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            background = { -- :h background
+                light = "mocha",
+                dark = "mocha",
+            },
+            transparent_background = true, -- disables setting the background color.
+            show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+            term_colors = false,    -- sets terminal colors (e.g. `g:terminal_color_0`)
+            dim_inactive = {
+                enabled = false,    -- dims the background color of inactive window
+                shade = "dark",
+                percentage = 0.15,  -- percentage of the shade to apply to the inactive window
+            },
+            no_italic = false,      -- Force no italic
+            no_bold = false,        -- Force no bold
+            styles = {              -- Handles the styles of general hi groups (see `:h highlight-args`):
+                comments = { "italic" }, -- Change the style of comments
+                conditionals = { "italic" },
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
+                operators = {},
+                -- miscs = {}, -- Uncomment to turn off hard-coded styles
+            },
+            color_overrides = {},
+            custom_highlights = {},
+            default_integrations = true,
+            integrations = {
+                cmp = true,
+                gitsigns = true,
+                nvimtree = true,
+                treesitter = true,
+                notify = false,
+                mini = {
+                    enabled = true,
+                    indentscope_color = "",
+                },
+                -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+            },
+        })
+
+        -- setup must be called before loading
+        vim.cmd.colorscheme "catppuccin"
+    end
+}
 
 -- return {
 --     "shaunsingh/nord.nvim",
@@ -209,65 +209,65 @@
 --     end
 -- }
 
-return {
-    'aliqyan-21/darkvoid.nvim',
-    priority = 1000,
-    config = function()
-        require('darkvoid').setup {
-            transparent = true,         -- set true for transparent
-            glow = true,                -- set true for glow effect
-            show_end_of_buffer = false, -- set false for not showing end of buffer
-
-            colors = {
-                fg = "#c0c0c0",
-                bg = "#1c1c1c",
-                cursor = "#bdfe58",
-                line_nr = "#404040",
-                visual = "#303030",
-                comment = "#585858",
-                string = "#d1d1d1",
-                func = "#e1e1e1",
-                kw = "#f1f1f1",
-                identifier = "#b1b1b1",
-                type = "#a1a1a1",
-                search_highlight = "#1bfd9c",
-                operator = "#1bfd9c",
-                bracket = "#e6e6e6",
-                preprocessor = "#4b8902",
-                bool = "#66b2b2",
-                constant = "#b2d8d8",
-
-                -- gitsigns colors
-                added = "#baffc9",
-                changed = "#ffffba",
-                removed = "#ffb3ba",
-
-                -- Pmenu colors
-                pmenu_bg = "#1c1c1c",
-                pmenu_sel_bg = "#1bfd9c",
-                pmenu_fg = "#c0c0c0",
-
-                -- EndOfBuffer color
-                eob = "#3c3c3c",
-
-                -- Telescope specific colors
-                border = "#585858",
-                title = "#bdfe58",
-
-                -- bufferline specific colors
-                -- change this to change the colors of current or selected tab
-                bufferline_selection = "#bdfe58",
-
-                -- LSP diagnostics colors
-                error = "#dea6a0",
-                warning = "#D0B8A8",
-                hint = "#BEDC74",
-                info = "#7FA1C3",
-            }
-        }
-        vim.cmd("colorscheme darkvoid")
-    end
-}
+-- return {
+--     'aliqyan-21/darkvoid.nvim',
+--     priority = 1000,
+--     config = function()
+--         require('darkvoid').setup {
+--             transparent = true,         -- set true for transparent
+--             glow = true,                -- set true for glow effect
+--             show_end_of_buffer = false, -- set false for not showing end of buffer
+--
+--             colors = {
+--                 fg = "#c0c0c0",
+--                 bg = "#1c1c1c",
+--                 cursor = "#bdfe58",
+--                 line_nr = "#404040",
+--                 visual = "#303030",
+--                 comment = "#585858",
+--                 string = "#d1d1d1",
+--                 func = "#e1e1e1",
+--                 kw = "#f1f1f1",
+--                 identifier = "#b1b1b1",
+--                 type = "#a1a1a1",
+--                 search_highlight = "#1bfd9c",
+--                 operator = "#1bfd9c",
+--                 bracket = "#e6e6e6",
+--                 preprocessor = "#4b8902",
+--                 bool = "#66b2b2",
+--                 constant = "#b2d8d8",
+--
+--                 -- gitsigns colors
+--                 added = "#baffc9",
+--                 changed = "#ffffba",
+--                 removed = "#ffb3ba",
+--
+--                 -- Pmenu colors
+--                 pmenu_bg = "#1c1c1c",
+--                 pmenu_sel_bg = "#1bfd9c",
+--                 pmenu_fg = "#c0c0c0",
+--
+--                 -- EndOfBuffer color
+--                 eob = "#3c3c3c",
+--
+--                 -- Telescope specific colors
+--                 border = "#585858",
+--                 title = "#bdfe58",
+--
+--                 -- bufferline specific colors
+--                 -- change this to change the colors of current or selected tab
+--                 bufferline_selection = "#bdfe58",
+--
+--                 -- LSP diagnostics colors
+--                 error = "#dea6a0",
+--                 warning = "#D0B8A8",
+--                 hint = "#BEDC74",
+--                 info = "#7FA1C3",
+--             }
+--         }
+--         vim.cmd("colorscheme darkvoid")
+--     end
+-- }
 
 -- return {
 --     'AlexvZyl/nordic.nvim',

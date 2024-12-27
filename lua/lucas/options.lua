@@ -1,3 +1,4 @@
+-- line numbers
 vim.opt.nu = false
 vim.opt.relativenumber = false
 vim.keymap.set(
@@ -15,6 +16,8 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
+
+vim.opt.autowrite = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
